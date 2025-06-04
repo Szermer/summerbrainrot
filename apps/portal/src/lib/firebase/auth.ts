@@ -39,11 +39,18 @@ const PROVIDERS = {
   facebook: new FacebookAuthProvider(),
 };
 
-// Set persistence to local by default
-setPersistence(auth, browserLocalPersistence);
+// Set persistence to local by default (only if auth is available)
+if (auth) {
+  setPersistence(auth, browserLocalPersistence);
+}
 
 // Helper to create/update user profile in Firestore
 async function createUserProfile(user: User, additionalData?: Partial<UserProfile>): Promise<void> {
+  if (!db) {
+    console.warn('Firestore not available, skipping user profile creation');
+    return;
+  }
+  
   const userRef = doc(db, 'users', user.uid);
   const userSnap = await getDoc(userRef);
 
@@ -81,6 +88,10 @@ export async function signUp(
   password: string,
   displayName?: string
 ): Promise<UserCredential> {
+  if (!auth) {
+    throw new Error('Firebase Auth not available');
+  }
+  
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     
@@ -108,6 +119,10 @@ export async function signIn(
   password: string,
   rememberMe: boolean = true
 ): Promise<UserCredential> {
+  if (!auth) {
+    throw new Error('Firebase Auth not available');
+  }
+  
   try {
     // Set persistence based on remember me
     await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence);
@@ -205,6 +220,11 @@ export async function resetPassword(email: string): Promise<void> {
 
 // Get user profile from Firestore
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
+  if (!db) {
+    console.warn('Firestore not available, cannot get user profile');
+    return null;
+  }
+  
   try {
     const userDoc = await getDoc(doc(db, 'users', uid));
     if (userDoc.exists()) {
@@ -219,17 +239,21 @@ export async function getUserProfile(uid: string): Promise<UserProfile | null> {
 
 // Auth state observer
 export function onAuthStateChange(callback: (user: User | null) => void) {
+  if (!auth) {
+    console.warn('Firebase Auth not available, cannot observe auth state');
+    return () => {}; // Return a no-op unsubscribe function
+  }
   return onAuthStateChanged(auth, callback);
 }
 
 // Get current user
 export function getCurrentUser(): User | null {
-  return auth.currentUser;
+  return auth?.currentUser || null;
 }
 
 // Check if user is authenticated
 export function isAuthenticated(): boolean {
-  return !!auth.currentUser;
+  return !!(auth?.currentUser);
 }
 
 // Get user role
