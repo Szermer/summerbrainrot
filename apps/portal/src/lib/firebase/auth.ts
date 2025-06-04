@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -146,6 +147,10 @@ export async function signIn(
 export async function signInWithProvider(
   providerName: 'google' | 'github' | 'facebook'
 ): Promise<UserCredential> {
+  if (!auth) {
+    throw new Error('Firebase Auth not available');
+  }
+  
   try {
     const provider = PROVIDERS[providerName];
     const result = await signInWithPopup(auth, provider);
@@ -199,6 +204,10 @@ async function clearSessionCookie(): Promise<void> {
 
 // Sign out
 export async function logout(): Promise<void> {
+  if (!auth) {
+    throw new Error('Firebase Auth not available');
+  }
+  
   try {
     await signOut(auth);
     await clearSessionCookie();
@@ -210,6 +219,10 @@ export async function logout(): Promise<void> {
 
 // Reset password
 export async function resetPassword(email: string): Promise<void> {
+  if (!auth) {
+    throw new Error('Firebase Auth not available');
+  }
+  
   try {
     await sendPasswordResetEmail(auth, email);
   } catch (error) {

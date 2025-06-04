@@ -44,7 +44,7 @@ pnpm run build
 pnpm run lint
 ```
 
-The portal will be available at http://localhost:3000
+The portal will be available at http://localhost:3001
 
 ## Authentication
 
@@ -207,6 +207,55 @@ pnpm run format
 
 # Fix formatting
 pnpm run format:fix
+```
+
+## Deployment
+
+### Production URLs
+
+- **Live Portal**: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
+- **Development**: http://localhost:3001
+
+### Firebase Web App Hosting
+
+The portal is deployed using Firebase Web App Hosting, which provides:
+
+- **Automatic Deployments**: Triggered by commits to `main` branch
+- **Environment Variables**: Automatically injected via `FIREBASE_WEBAPP_CONFIG`
+- **Server-Side Rendering**: Full Next.js SSR support
+- **Global CDN**: Optimized content delivery
+- **Custom Domains**: Support for `summerbrainrot.camp` domain
+
+### Deployment Process
+
+1. **Local Build**: 
+   ```bash
+   pnpm run build
+   ```
+
+2. **Automatic Deployment**: 
+   - Push changes to `main` branch
+   - Firebase Web App Hosting detects changes
+   - Builds and deploys automatically
+   - Available at production URL
+
+3. **Environment Configuration**:
+   - Firebase configuration is automatically injected
+   - No manual environment setup required in production
+   - Falls back to local `.env.local` for development
+
+### Deployment Architecture
+
+```
+GitHub Repository (main branch)
+        ↓
+Firebase Web App Hosting
+        ↓
+Next.js Build Process
+        ↓
+Production Deployment
+        ↓ 
+https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 ```
 
 ## Contributing
