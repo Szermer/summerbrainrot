@@ -226,6 +226,27 @@ The portal is deployed using Firebase Web App Hosting, which provides:
 - **Global CDN**: Optimized content delivery
 - **Custom Domains**: Support for `summerbrainrot.camp` domain
 
+#### Configuration Requirements
+
+Firebase Web App Hosting requires an `apphosting.yaml` file in the repository root:
+
+```yaml
+# Firebase Web App Hosting configuration
+runConfig:
+  runtime: nodejs20
+
+buildConfig:
+  rootDirectory: apps/portal
+  commands:
+    - name: install
+      command: pnpm install --frozen-lockfile
+    - name: build
+      command: pnpm run build
+  outputDirectory: .next
+```
+
+This configuration tells Firebase how to build and deploy the portal application.
+
 ### Deployment Process
 
 1. **Local Build**: 

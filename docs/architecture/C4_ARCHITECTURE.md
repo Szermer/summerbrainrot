@@ -103,14 +103,16 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 
 #### Portal App
 - **Technology**: Next.js 15 with SSR
-- **Deployment**: Firebase Framework Hosting (summerbrainrot.camp)
+- **Deployment**: Firebase Web App Hosting with automatic deployments
+- **Production URL**: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 - **Purpose**: Authenticated user experience
 - **Base Template**: shadcn Admin Template v1.0.0
 - **Design System**: Subtle brand colors (purple primary, pink accent)
 - **Authentication**: Firebase Auth with email/password and social login
 - **Key Features**: Dashboard, progress tracking, collaboration tools, user management
-- **Firebase Integration**: Auth, Firestore, Storage, Analytics
+- **Firebase Integration**: Auth, Firestore, Storage, Analytics, Web App Hosting
 - **Security**: HTTP-only cookies, route protection middleware, role-based access
+- **Environment Configuration**: Multi-environment support (development, production)
 
 #### Shared Packages
 - **Components**: Reusable UI components
@@ -289,6 +291,16 @@ tests/
 - **Phase 3**: Citrus-themed vibrant design with OKLCH colors (current)
 - Modern pricing component with monthly/yearly toggle
 - Enhanced typography with Alexandria font family
+
+### Deployment Evolution
+- **Phase 1**: Local development with Firebase emulators
+- **Phase 2**: Firebase static hosting for marketing site
+- **Phase 3**: Firebase Web App Hosting for portal with automatic deployments (current)
+  - Requires `apphosting.yaml` configuration file in repository root
+  - Node.js 20 runtime with pnpm package management
+  - Multi-environment configuration with seamless production deployment
+  - Automatic GitHub integration with build and deploy pipeline
+  - Production URL: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 
 ---
 

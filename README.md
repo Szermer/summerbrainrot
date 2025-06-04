@@ -93,7 +93,9 @@ summerbrainrot/
 
 ### Participant Portal (`apps/portal/`)
 - **Domain**: summerbrainrot.camp  
+- **Production URL**: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 - **Technology**: Next.js with SSR, Firebase Authentication
+- **Deployment**: Firebase Web App Hosting with automatic deployments
 - **Purpose**: Authenticated participant experience, progress tracking, collaboration
 - **Target Audience**: Current participants, mentors, program administrators
 - **Authentication**: Firebase Auth with email/password and social login
@@ -130,11 +132,30 @@ summerbrainrot/
 ### Deployment & Infrastructure
 - **Hosting**: Firebase Hosting with multi-site configuration
   - Marketing: Static export to `summerbrainrot.com`
-  - Portal: SSR via Firebase Framework Hosting to `summerbrainrot.camp`
+  - Portal: Firebase Web App Hosting to `summerbrainrot.camp`
+    - Automatic deployments from GitHub main branch
+    - Requires `apphosting.yaml` configuration file
+    - Production URL: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 - **Database**: Firebase Firestore with real-time sync
 - **Authentication**: Firebase Auth with Google/Email sign-in
 - **Storage**: Firebase Storage for user uploads and assets
 - **Analytics**: Firebase Analytics + Google Analytics integration
+
+#### Firebase Web App Hosting Configuration
+The portal app requires an `apphosting.yaml` file in the repository root:
+```yaml
+runConfig:
+  runtime: nodejs20
+
+buildConfig:
+  rootDirectory: apps/portal
+  commands:
+    - name: install
+      command: pnpm install --frozen-lockfile
+    - name: build
+      command: pnpm run build
+  outputDirectory: .next
+```
 
 #### Deployment Commands
 ```bash
