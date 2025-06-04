@@ -2,17 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import {
-  ChevronRight,
-  Brain,
-  Users,
-  BookOpen,
-  HelpCircle,
-  Mail,
-} from 'lucide-react';
+import { ChevronRight, Brain } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
@@ -26,181 +20,115 @@ import {
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
 
-// Summer Brain Rot Logo Component
-const BrandLogo = ({
-  className = '',
-  showText = true,
-}: {
-  className?: string;
-  showText?: boolean;
-}) => (
-  <Link href="/" className={cn('group flex items-center gap-3', className)}>
-    {/* Brain Icon */}
-    <div className="relative">
-      <div className="bg-brain-rot-gradient flex h-8 w-8 items-center justify-center rounded-lg transition-transform duration-200 group-hover:scale-110">
-        <Brain className="h-5 w-5 text-white" />
-      </div>
-      {/* Subtle glow effect */}
-      <div className="bg-brain-rot-gradient absolute inset-0 -z-10 rounded-lg opacity-20 blur-md transition-opacity duration-200 group-hover:opacity-40" />
-    </div>
-
-    {/* Brand text */}
-    {showText && (
-      <div className="hidden sm:block">
-        <div className="text-gradient-primary font-display text-lg leading-tight font-bold">
-          Summer Brain Rot
-        </div>
-        <div className="-mt-1 text-xs font-medium text-gray-500">
-          Strategic Learning Lab
-        </div>
-      </div>
-    )}
-  </Link>
-);
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Handle menu overflow
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
     }
-    return () => document.body.classList.remove('overflow-hidden');
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
   }, [isMenuOpen]);
 
-  const NAVIGATION_ITEMS = [
+  const ITEMS = [
     {
       label: 'Program',
       href: '#program',
-      icon: BookOpen,
       dropdownItems: [
         {
           title: 'Curriculum',
           href: '/curriculum',
           description:
             'Comprehensive learning path from basics to business launch',
-          icon: BookOpen,
         },
         {
           title: 'Mentorship',
           href: '/mentorship',
-          description:
-            'Work directly with industry professionals and successful entrepreneurs',
-          icon: Users,
+          description: 'Work directly with industry professionals',
         },
         {
           title: 'Projects',
           href: '/projects',
-          description:
-            'Real-world applications and portfolio-building opportunities',
-          icon: Brain,
+          description: 'Real-world applications and portfolio building',
         },
       ],
     },
-    {
-      label: 'About',
-      href: '/about',
-      icon: Users,
-    },
-    {
-      label: 'Success Stories',
-      href: '/success-stories',
-      icon: Brain,
-    },
-    {
-      label: 'FAQ',
-      href: '/faq',
-      icon: HelpCircle,
-    },
-    {
-      label: 'Contact',
-      href: '/contact',
-      icon: Mail,
-    },
+    { label: 'About us', href: '/about' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
   ];
 
+  const bgColor =
+    pathname === '/about'
+      ? 'bg-mint-50'
+      : ['/', '/faq', '/signup', '/login'].includes(pathname)
+        ? 'bg-sand-100'
+        : 'bg-background';
+
   return (
-    <header
-      className={cn(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'border-b border-gray-200/50 bg-white/95 shadow-sm backdrop-blur-lg'
-          : 'bg-transparent',
-      )}
-    >
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between py-4">
-          {/* Brand Logo */}
-          <BrandLogo />
+    <header className={cn('relative z-50', bgColor)}>
+      <div className="max-w-9xl container">
+        <div className="flex items-center justify-between py-3">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
+              <Brain className="h-8 w-8" />
+              <span className="font-semibold text-lg">Summer Brain Rot</span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="flex items-center gap-2">
-              {NAVIGATION_ITEMS.map((item) =>
-                item.dropdownItems ? (
-                  <NavigationMenuItem key={item.label}>
-                    <NavigationMenuTrigger className="hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 rounded-lg bg-transparent px-4 py-2 font-medium text-gray-700 transition-colors">
-                      <item.icon className="mr-2 h-4 w-4" />
-                      {item.label}
+          <NavigationMenu className="hidden items-center gap-8 lg:flex">
+            <NavigationMenuList>
+              {ITEMS.map((link) =>
+                link.dropdownItems ? (
+                  <NavigationMenuItem key={link.label}>
+                    <NavigationMenuTrigger className="text-primary bg-transparent font-normal lg:text-base">
+                      {link.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="w-[420px] p-4">
-                        <div className="grid gap-3">
-                          {item.dropdownItems.map((dropdownItem) => (
-                            <NavigationMenuLink
-                              key={dropdownItem.title}
-                              asChild
-                            >
+                      <ul className="w-[400px] p-4">
+                        {link.dropdownItems.map((item) => (
+                          <li key={item.title}>
+                            <NavigationMenuLink asChild>
                               <Link
-                                href={dropdownItem.href}
-                                className="group hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 flex items-start gap-3 rounded-lg p-3 transition-colors"
+                                href={item.href}
+                                className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
                               >
-                                <div className="bg-brain-rot-purple-100 group-hover:bg-brain-rot-purple-200 flex h-8 w-8 items-center justify-center rounded-lg transition-colors">
-                                  <dropdownItem.icon className="text-brain-rot-purple-600 h-4 w-4" />
-                                </div>
-                                <div className="flex-1">
-                                  <div className="mb-1 text-sm font-semibold">
-                                    {dropdownItem.title}
+                                <div className="space-y-1.5">
+                                  <div className="text-sm leading-none font-medium">
+                                    {item.title}
                                   </div>
-                                  <p className="text-xs leading-relaxed text-gray-600">
-                                    {dropdownItem.description}
+                                  <p className="text-muted-foreground line-clamp-2 text-sm leading-tight">
+                                    {item.description}
                                   </p>
                                 </div>
                               </Link>
                             </NavigationMenuLink>
-                          ))}
-                        </div>
-                      </div>
+                          </li>
+                        ))}
+                      </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ) : (
-                  <NavigationMenuItem key={item.label}>
+                  <NavigationMenuItem key={link.label}>
                     <Link
-                      href={item.href}
+                      href={link.href}
                       className={cn(
-                        'flex items-center gap-2 rounded-lg px-4 py-2 font-medium transition-colors',
-                        pathname === item.href
-                          ? 'bg-brain-rot-purple-100 text-brain-rot-purple-700'
-                          : 'hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 text-gray-700',
+                        'text-primary p-2 lg:text-base',
+                        pathname === link.href && 'text-muted-foreground',
                       )}
                     >
-                      <item.icon className="h-4 w-4" />
-                      {item.label}
+                      {link.label}
                     </Link>
                   </NavigationMenuItem>
                 ),
@@ -208,165 +136,148 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
-            {/* Portal Link for existing participants */}
-            <Link
-              href="https://portal.summerbrainrot.camp"
-              className="text-brain-rot-purple-600 hover:text-brain-rot-purple-700 hidden text-sm font-medium transition-colors lg:block"
-            >
-              Participant Portal →
-            </Link>
-
-            {/* Apply Button */}
-            <Link href="/apply">
-              <Button className="btn-brand-primary hidden sm:flex" size="sm">
+          {/* Auth Buttons */}
+          <div className="flex items-center gap-2.5">
+            <Link href="/apply" className="hidden lg:block">
+              <Button variant="ghost" className="text-muted-foreground">
                 Apply Now
               </Button>
             </Link>
-
-            {/* Theme Toggle */}
+            <Link
+              href="/login"
+              className={`transition-opacity duration-300 ${isMenuOpen ? 'max-lg:pointer-events-none max-lg:opacity-0' : 'opacity-100'}`}
+            >
+              <Button variant="outline">Login</Button>
+            </Link>
             <div
-              className={cn(
-                'transition-opacity duration-300',
-                isMenuOpen
-                  ? 'max-lg:pointer-events-none max-lg:opacity-0'
-                  : 'opacity-100',
-              )}
+              className={`transition-opacity duration-300 ${isMenuOpen ? 'max-lg:pointer-events-none max-lg:opacity-0' : 'opacity-100'}`}
             >
               <ThemeToggle />
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Hamburger Menu Button (Mobile Only) */}
             <button
-              className="hover:text-brain-rot-purple-600 relative flex h-8 w-8 items-center justify-center text-gray-600 transition-colors lg:hidden"
+              className="text-muted-foreground relative flex size-8 lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
             >
-              <div className="relative h-5 w-5">
+              <span className="sr-only">Open main menu</span>
+              <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
                 <span
-                  className={cn(
-                    'absolute block h-0.5 w-full rounded-full bg-current transition-all duration-300 ease-in-out',
-                    isMenuOpen ? 'top-2 rotate-45' : 'top-1',
-                  )}
-                />
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`}
+                ></span>
                 <span
-                  className={cn(
-                    'absolute top-2 block h-0.5 w-full rounded-full bg-current transition-all duration-300 ease-in-out',
-                    isMenuOpen ? 'opacity-0' : 'opacity-100',
-                  )}
-                />
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? 'opacity-0' : ''}`}
+                ></span>
                 <span
-                  className={cn(
-                    'absolute block h-0.5 w-full rounded-full bg-current transition-all duration-300 ease-in-out',
-                    isMenuOpen ? 'top-2 -rotate-45' : 'top-3',
-                  )}
-                />
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-1.5'}`}
+                ></span>
               </div>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          'absolute top-full right-0 left-0 border-b border-gray-200/50 bg-white/95 backdrop-blur-lg transition-all duration-300 ease-in-out lg:hidden',
+          'absolute inset-0 top-full container flex h-[calc(100vh-64px)] flex-col transition-all duration-300 ease-in-out lg:hidden',
           isMenuOpen
-            ? 'visible translate-y-0 opacity-100'
-            : 'invisible -translate-y-4 opacity-0',
+            ? 'visible translate-x-0 opacity-100'
+            : 'invisible translate-x-full opacity-0',
+          bgColor,
         )}
       >
-        <div className="container mx-auto py-6">
-          {/* Mobile CTA */}
-          <div className="mb-6 flex flex-col gap-3">
-            <Link href="/apply" onClick={() => setIsMenuOpen(false)}>
-              <Button className="btn-brand-primary w-full">Apply Now</Button>
-            </Link>
-            <Link
-              href="https://portal.summerbrainrot.camp"
-              className="text-brain-rot-purple-600 hover:text-brain-rot-purple-700 text-center text-sm font-medium transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Participant Portal →
-            </Link>
-          </div>
-
-          {/* Mobile Navigation */}
-          <nav className="space-y-2">
-            {NAVIGATION_ITEMS.map((item) =>
-              item.dropdownItems ? (
-                <div key={item.label}>
-                  <button
-                    onClick={() =>
-                      setOpenDropdown(
-                        openDropdown === item.label ? null : item.label,
-                      )
-                    }
-                    className="hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 flex w-full items-center justify-between rounded-lg p-3 text-left text-gray-700 transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <item.icon className="h-5 w-5" />
-                      <span className="font-medium">{item.label}</span>
-                    </div>
-                    <ChevronRight
-                      className={cn(
-                        'h-4 w-4 transition-transform',
-                        openDropdown === item.label ? 'rotate-90' : '',
-                      )}
-                    />
-                  </button>
-
-                  <div
-                    className={cn(
-                      'ml-8 space-y-1 overflow-hidden transition-all duration-300',
-                      openDropdown === item.label
-                        ? 'mt-2 max-h-96 opacity-100'
-                        : 'max-h-0 opacity-0',
-                    )}
-                  >
-                    {item.dropdownItems.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.title}
-                        href={dropdownItem.href}
-                        className="hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 flex items-start gap-3 rounded-lg p-3 text-gray-600 transition-colors"
-                        onClick={() => {
-                          setIsMenuOpen(false);
-                          setOpenDropdown(null);
-                        }}
-                      >
-                        <dropdownItem.icon className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium">
-                            {dropdownItem.title}
-                          </div>
-                          <p className="mt-1 text-xs leading-relaxed">
-                            {dropdownItem.description}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={cn(
-                    'flex items-center gap-3 rounded-lg p-3 font-medium transition-colors',
-                    pathname === item.href
-                      ? 'bg-brain-rot-purple-100 text-brain-rot-purple-700'
-                      : 'hover:bg-brain-rot-purple-50 hover:text-brain-rot-purple-700 text-gray-700',
-                  )}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <item.icon className="h-5 w-5" />
-                  {item.label}
-                </Link>
-              ),
-            )}
-          </nav>
+        <div className="mt-8 space-y-2">
+          <Link
+            href="/apply"
+            className="block"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Button size="sm" className="w-full">
+              Apply Now
+            </Button>
+          </Link>
+          <Link
+            href="/login"
+            className="block"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Button size="sm" className="w-full" variant="outline">
+              Login
+            </Button>
+          </Link>
         </div>
+        <nav className="mt-3 flex flex-1 flex-col gap-6">
+          {ITEMS.map((link) =>
+            link.dropdownItems ? (
+              <div key={link.label} className="">
+                <button
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === link.label ? null : link.label,
+                    )
+                  }
+                  className="text-primary flex w-full items-center justify-between text-lg tracking-[-0.36px]"
+                  aria-label={`${link.label} menu`}
+                  aria-expanded={openDropdown === link.label}
+                >
+                  {link.label}
+                  <ChevronRight
+                    className={cn(
+                      'h-4 w-4 transition-transform',
+                      openDropdown === link.label ? 'rotate-90' : '',
+                    )}
+                    aria-hidden="true"
+                  />
+                </button>
+                <div
+                  className={cn(
+                    'ml-4 space-y-3 overflow-hidden transition-all',
+                    openDropdown === link.label
+                      ? 'mt-3 max-h-[1000px] opacity-100'
+                      : 'max-h-0 opacity-0',
+                  )}
+                >
+                  {link.dropdownItems.map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="hover:bg-accent flex items-start gap-3 rounded-md p-2"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setOpenDropdown(null);
+                      }}
+                    >
+                      <div>
+                        <div className="text-primary font-medium">
+                          {item.title}
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          {item.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={cn(
+                  'text-primary text-lg tracking-[-0.36px]',
+                  pathname === link.href && 'text-muted-foreground',
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
+        </nav>
       </div>
     </header>
   );

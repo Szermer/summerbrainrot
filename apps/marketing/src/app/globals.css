@@ -127,10 +127,6 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   --animate-marquee: marquee 25s linear infinite;
-  --animate-gradient: gradient 6s ease infinite;
-  --animate-glow: glow 2s ease-in-out infinite alternate;
-  --animate-float: float 3s ease-in-out infinite;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   @keyframes accordion-down {
     from {
@@ -154,36 +150,6 @@
     }
     100% {
       transform: translateX(-100%);
-    }
-  }
-  @keyframes gradient {
-    0%, 100% {
-      background-size: 200% 200%;
-      background-position: left center;
-    }
-    50% {
-      background-size: 200% 200%;
-      background-position: right center;
-    }
-  }
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 5px hsl(var(--color-brain-rot-purple-500)), 
-                   0 0 10px hsl(var(--color-brain-rot-purple-500)), 
-                   0 0 15px hsl(var(--color-brain-rot-purple-500));
-    }
-    to {
-      text-shadow: 0 0 10px hsl(var(--color-brain-rot-pink-500)), 
-                   0 0 20px hsl(var(--color-brain-rot-pink-500)), 
-                   0 0 30px hsl(var(--color-brain-rot-pink-500));
-    }
-  }
-  @keyframes float {
-    0%, 100% { 
-      transform: translateY(0px); 
-    }
-    50% { 
-      transform: translateY(-10px); 
     }
   }
 }
@@ -217,8 +183,6 @@
   }
 }
 
-/* Brand-specific utility classes */
-
 @layer utilities {
   body {
     font-family: var(--font-inter), sans-serif;
@@ -228,312 +192,50 @@
   h2 {
     font-family: var(--font-inter-tight), sans-serif;
   }
-
-  /* Summer Brain Rot Brand Utilities */
-  .font-display {
-    font-family: var(--font-space-grotesk);
-  }
-
-  .font-mono {
-    font-family: var(--font-jetbrains-mono);
-  }
-
-  /* Gradient text utilities */
-  .text-gradient-primary {
-    background: linear-gradient(135deg, 
-      hsl(var(--color-brain-rot-purple-500)), 
-      hsl(var(--color-brain-rot-pink-500))
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-  }
-
-  .text-gradient-electric {
-    background: linear-gradient(135deg, 
-      hsl(var(--color-brain-rot-cyan-500)), 
-      hsl(var(--color-brain-rot-purple-500))
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-  }
-
-  .text-gradient-success {
-    background: linear-gradient(135deg, 
-      hsl(var(--color-brain-rot-accent-500)), 
-      hsl(var(--color-brain-rot-cyan-500))
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-  }
-
-  .text-gradient-hero {
-    background: linear-gradient(135deg, 
-      hsl(var(--color-brain-rot-purple-500)), 
-      hsl(var(--color-brain-rot-pink-500)), 
-      hsl(var(--color-brain-rot-cyan-500))
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-  }
-
-  .text-gradient-animated {
-    animation: var(--animate-gradient);
-  }
-
-  /* Background utilities */
-  .bg-brain-rot-gradient {
-    background: linear-gradient(135deg, 
-      hsl(var(--color-brain-rot-purple-500)), 
-      hsl(var(--color-brain-rot-pink-500)), 
-      hsl(var(--color-brain-rot-cyan-500))
-    );
-  }
-
-  .bg-brain-rot-mesh {
-    background: 
-      radial-gradient(circle at 20% 50%, hsla(var(--color-brain-rot-purple-500) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsla(var(--color-brain-rot-pink-500) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsla(var(--color-brain-rot-cyan-500) / 0.15) 0%, transparent 50%);
-  }
-
-  /* Brand typography styles */
-  .text-brand-hero {
-    font-family: var(--font-space-grotesk);
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .text-brand-subtitle {
-    font-family: var(--font-space-grotesk);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    line-height: 1.2;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .text-brand-tagline {
-    font-family: var(--font-inter);
-    font-size: clamp(1.125rem, 3vw, 1.5rem);
-    line-height: 1.5;
-    font-weight: 500;
-  }
-  
-  .text-body-lg {
-    font-size: 1.125rem;
-    line-height: 1.75;
-  }
-
-  /* Shadow utilities */
-  .shadow-brand {
-    box-shadow: 0 4px 14px 0 hsla(var(--color-brain-rot-purple-500) / 0.15);
-  }
-
-  .shadow-brand-lg {
-    box-shadow: 
-      0 10px 25px -3px hsla(var(--color-brain-rot-purple-500) / 0.15), 
-      0 4px 6px -2px hsla(var(--color-brain-rot-purple-500) / 0.05);
-  }
-
-  .shadow-glow-purple {
-    box-shadow: 0 0 20px hsla(var(--color-brain-rot-purple-500) / 0.4);
-  }
-  
-  /* Button utilities */
-  .btn-brand-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.375rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    background-color: hsl(var(--color-brain-rot-purple-500));
-    color: white;
-  }
-  
-  .btn-brand-primary:hover {
-    background-color: hsl(var(--color-brain-rot-purple-600));
-  }
-  
-  .btn-brand-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.375rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    background-color: hsl(var(--color-brain-rot-pink-500));
-    color: white;
-  }
-  
-  .btn-brand-secondary:hover {
-    background-color: hsl(var(--color-brain-rot-pink-600));
-  }
-  
-  .btn-brand-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.375rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    border: 1px solid hsl(var(--color-brain-rot-purple-500));
-    color: hsl(var(--color-brain-rot-purple-600));
-    background-color: transparent;
-  }
-  
-  .btn-brand-outline:hover {
-    background-color: hsl(var(--color-brain-rot-purple-50));
-  }
-
-  .shadow-glow-pink {
-    box-shadow: 0 0 20px hsla(var(--color-brain-rot-pink-500) / 0.4);
-  }
-
-  .shadow-glow-cyan {
-    box-shadow: 0 0 20px hsla(var(--color-brain-rot-cyan-500) / 0.4);
-  }
-
-  /* Border utilities */
-  .border-gradient-primary {
-    border: 2px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, 
-                  hsl(var(--color-brain-rot-purple-500)), 
-                  hsl(var(--color-brain-rot-pink-500))
-                ) border-box;
-  }
-
-  /* Animation utilities */
-  .animate-glow {
-    animation: var(--animate-glow);
-  }
-
-  .animate-float {
-    animation: var(--animate-float);
-  }
-
-  .animate-gradient {
-    animation: var(--animate-gradient);
-  }
-
-  .animate-pulse-slow {
-    animation: var(--animate-pulse-slow);
-  }
 }
 
 @layer components {
   button {
     cursor: pointer;
   }
-  /* Commented out @apply directives - not supported in Tailwind v4 */
-  /*
   [class*='border'] {
     @apply border-border;
   }
-  */
-
-  /* Brand button components - use the button classes defined earlier in the utilities layer */
-
-  /* Brand card components - commented out due to Tailwind v4 @apply limitations */
-  /*
-  .card-brand {
-    @apply bg-white border border-gray-200 rounded-[--radius-brand-lg] p-6 shadow-sm
-           transition-all duration-300 ease-out;
-  }
-
-  .card-brand-gradient {
-    @apply bg-brain-rot-mesh border border-brain-rot-purple-200 rounded-[--radius-brand-lg] p-6
-           transition-all duration-300 ease-out;
-  }
-
-  .card-brand-glow {
-    @apply bg-white border border-brain-rot-purple-200 rounded-[--radius-brand-lg] p-6 shadow-brand
-           transition-all duration-300 ease-out;
-  }
-
-  .card-brand-hover {
-    @apply hover:shadow-brand-lg hover:scale-[1.02] hover:-translate-y-1;
-  }
-  */
 }
 
-/* Dark mode theme updates */
 @layer base {
   .dark {
-    --color-background: 240 10% 4%; /* #09090B */
-    --color-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-card: 240 10% 4%; /* #09090B */
-    --color-card-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-popover: 240 10% 4%; /* #09090B */
-    --color-popover-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-primary: 0 0% 100%; /* #FFFFFF */
-    --color-primary-foreground: 240 10% 4%; /* #09090B */
-    --color-secondary: 240 10% 10%; /* #19191C */
-    --color-secondary-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-muted: 240 10% 10%; /* #19191C */
-    --color-muted-foreground: 240 5% 65%; /* #A1A1A1 */
-    --color-accent: 240 10% 10%; /* #19191C */
-    --color-accent-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-destructive: 0 84.2% 60.2%; /* #EF4444 */
-    --color-destructive-foreground: 0 0% 100%; /* #FFFFFF */
-    --color-border: 0 0% 100% / 0.1; /* #FFFFFF1A */
-    --color-input: 240 10% 10%; /* #19191C */
-    --color-ring: 0 0% 100%; /* #FFFFFF */
-    --color-chart-1: 12 76% 61%; /* #E65C41 */
-    --color-chart-2: 173 58% 39%; /* #2A9D8F */
-    --color-chart-3: 197 37% 24%; /* #264653 */
-    --color-chart-4: 43 74% 66%; /* #E9C46A */
-    --color-chart-5: 27 87% 67%; /* #F4A261 */
-    --color-sand-50: 240 10% 10%; /* #19191C */
-    --color-sand-100: 240 10% 15%; /* #24242B */
-    --color-sand-600: 240 5% 65%; /* #A1A1A1 */
-    --color-sand-700: 240 5% 70%; /* #B3B3B3 */
-    --color-mint: 162 17% 20%; /* #2A3633 */
-    --color-mint-50: 108 12% 20%; /* #2F332E */
-
-    /* Adjust brand colors for dark mode backgrounds */
-    --color-ring: var(--color-brain-rot-purple-400); /* Lighter purple for dark mode focus */
+    --background: 240 10% 4%; /* #09090B */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    --card: 240 10% 4%; /* #09090B */
+    --card-foreground: 0 0% 100%; /* #FFFFFF */
+    --popover: 240 10% 4%; /* #09090B */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
+    --primary: 0 0% 100%; /* #FFFFFF */
+    --primary-foreground: 240 10% 4%; /* #09090B */
+    --secondary: 240 10% 10%; /* #19191C */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+    --muted: 240 10% 10%; /* #19191C */
+    --muted-foreground: 240 5% 65%; /* #A1A1A1 */
+    --accent: 240 10% 10%; /* #19191C */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 0 84.2% 60.2%; /* #EF4444 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 0 0% 100% / 0.1; /* #FFFFFF1A */
+    --input: 240 10% 10%; /* #19191C */
+    --ring: 0 0% 100%; /* #FFFFFF */
+    --chart-1: 12 76% 61%; /* #E65C41 */
+    --chart-2: 173 58% 39%; /* #2A9D8F */
+    --chart-3: 197 37% 24%; /* #264653 */
+    --chart-4: 43 74% 66%; /* #E9C46A */
+    --chart-5: 27 87% 67%; /* #F4A261 */
+    --sand-50: 240 10% 10%; /* #19191C */
+    --sand-100: 240 10% 15%; /* #24242B */
+    --sand-600: 240 5% 65%; /* #A1A1A1 */
+    --sand-700: 240 5% 70%; /* #B3B3B3 */
+    --mint: 162 17% 20%; /* #2A3633 */
+    --mint-50: 108 12% 20%; /* #2F332E */
   }
-
-  /* Dark mode brand card adjustments - commented out due to @apply limitations */
-  /*
-  .dark .card-brand {
-    @apply bg-gray-900 border-gray-800;
-  }
-
-  .dark .card-brand-gradient {
-    @apply border-brain-rot-purple-800;
-  }
-
-  .dark .card-brand-glow {
-    @apply bg-gray-900 border-brain-rot-purple-800;
-  }
-  */
 }
 
 @layer base {

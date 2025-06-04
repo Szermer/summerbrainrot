@@ -9,6 +9,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0001](decisions/0001-monorepo-structure.md) | Monorepo Structure for Summer Brain Rot | Accepted | 2025-01-06 | Architecture |
 | [ADR-0002](decisions/0002-testing-infrastructure.md) | Testing Infrastructure with Vitest and Playwright | Accepted | 2025-01-06 | Testing |
 | [ADR-0003](decisions/0003-firebase-platform.md) | Firebase Platform for Hosting and Backend Services | Accepted | 2025-01-06 | Platform |
+| [ADR-0004](decisions/0004-template-pattern-restoration.md) | Template Pattern Restoration | Accepted | 2025-01-06 | UI/Design |
 
 ## Categories
 
@@ -21,6 +22,9 @@ This registry provides a quick reference to all Architecture Decision Records (A
 ### Platform & Infrastructure
 - **ADR-0003**: Firebase platform for hosting, authentication, database, and storage
 
+### UI/Design
+- **ADR-0004**: Restore original template patterns with minimal brand customization
+
 ### Authentication (Planned)
 - Coming soon: Cross-domain authentication strategy
 
@@ -32,11 +36,13 @@ This registry provides a quick reference to all Architecture Decision Records (A
 ### Dependencies
 - ADR-0002 (Testing) depends on ADR-0001 (Monorepo) for workspace configuration
 - ADR-0003 (Firebase) depends on ADR-0001 (Monorepo) for multi-site configuration
+- ADR-0004 (Template Patterns) relates to ADR-0001 (Monorepo) for template preservation
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design
 - Monorepo structure (ADR-0001) affects all future architectural decisions
 - Firebase platform (ADR-0003) provides infrastructure for authentication and data storage
+- Template patterns (ADR-0004) guides UI development and maintenance strategies
 
 ## Review Schedule
 

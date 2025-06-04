@@ -72,11 +72,15 @@ summerbrainrot/
 │   ├── types/              # Shared TypeScript definitions
 │   └── config/             # Shared configuration files
 ├── docs/
-│   ├── participant-guide/ # Learning materials and guides
-│   └── development/       # Technical documentation
-└── tools/
-    ├── scripts/           # Development automation
-    └── deployment/        # Deployment configuration
+│   ├── architecture/      # Architecture decisions and C4 diagrams
+│   ├── guides/            # Development and testing guides
+│   └── updates/           # Project updates and changelogs
+├── templates/              # Original template source for reference
+│   ├── streamline-nextjs-template-1.1.0/
+│   └── shadcn-admin-1.0.0/
+└── tests/
+    ├── unit/              # Unit test suites
+    └── e2e/               # End-to-end test scenarios
 ```
 
 ## 🎯 Application Architecture
@@ -101,6 +105,13 @@ summerbrainrot/
 - **Tailwind CSS v4** for styling
 - **shadcn/ui** components
 - **React Hook Form + Zod** for forms and validation
+
+### Design System
+- **Base Templates**: 
+  - Marketing: Streamline Next.js Template v1.1.0 (sand color scheme)
+  - Portal: shadcn Admin Template v1.0.0 (subtle brand integration)
+- **Brand Integration**: Minimal customization preserving template patterns
+- **Component Architecture**: Template-driven with shared components for consistency
 
 ### Development Tools
 - **Turbo** for monorepo task running

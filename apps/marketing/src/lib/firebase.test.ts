@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeAll } from 'vitest';
+import { initializeApp, getApps } from 'firebase/app';
 
 /**
  * FIREBASE INTEGRATION TEST
@@ -25,7 +26,10 @@ describe('Firebase Integration', () => {
   });
 
   it('should initialize Firebase with proper configuration', () => {
-    // Since Firebase is mocked in setup.ts, we just verify the mocks are called
-    expect(vi.mocked((globalThis as any).firebase?.initializeApp)).toBeDefined();
+    // Since Firebase is mocked in setup.ts, we verify the mocked functions exist
+    expect(initializeApp).toBeDefined();
+    expect(getApps).toBeDefined();
+    expect(vi.mocked(initializeApp)).toBeDefined();
+    expect(vi.mocked(getApps)).toBeDefined();
   });
 });

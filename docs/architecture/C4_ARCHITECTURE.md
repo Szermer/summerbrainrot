@@ -64,6 +64,7 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 │  │  - Next.js 15       │     │  - Next.js 15       │        │
 │  │  - Tailwind CSS     │     │  - Tailwind CSS     │        │
 │  │  - MDX Content      │     │  - TanStack Table   │        │
+│  │  - Streamline Template│     │  - shadcn Admin     │        │
 │  └──────────┬───────────┘     └──────────┬──────────┘        │
 │             │                             │                     │
 │             └─────────────┬───────────────┘                    │
@@ -95,13 +96,17 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 - **Technology**: Next.js 15 with static export
 - **Deployment**: Firebase Hosting (summerbrainrot.com)
 - **Purpose**: Public information, lead generation
-- **Key Features**: SEO optimization, performance, MDX content
+- **Base Template**: Streamline Next.js Template v1.1.0
+- **Design System**: Sand color palette with minimal brand accents
+- **Key Features**: SEO optimization, performance, MDX content, carousel hero
 - **Firebase Integration**: Analytics, performance monitoring
 
 #### Portal App
 - **Technology**: Next.js 15 with SSR
 - **Deployment**: Firebase Framework Hosting (summerbrainrot.camp)
 - **Purpose**: Authenticated user experience
+- **Base Template**: shadcn Admin Template v1.0.0
+- **Design System**: Subtle brand colors (purple primary, pink accent)
 - **Key Features**: Dashboard, progress tracking, collaboration tools
 - **Firebase Integration**: Auth, Firestore, Storage, Analytics
 
@@ -206,6 +211,7 @@ tests/
 - Code is written to be readable and learnable
 - Comments explain business logic
 - Progressive complexity in features
+- Template patterns teach industry standards
 
 ### 3. Scalability
 - Stateless components

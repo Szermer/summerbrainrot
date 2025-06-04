@@ -17,34 +17,32 @@ import {
   IconUserOff,
   IconUsers,
 } from "@tabler/icons-react"
-import { AudioWaveform, GalleryVerticalEnd } from "lucide-react"
+import { AudioWaveform, GalleryVerticalEnd, Brain } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/logo"
 import { type SidebarData } from "../types"
 
 export const sidebarData: SidebarData = {
   user: {
-    name: "ausrobdev",
-    email: "rob@shadcnblocks.com",
-    avatar: "/avatars/ausrobdev-avatar.png",
+    name: "Summer Participant",
+    email: "participant@summerbrainrot.camp",
+    avatar: "/avatars/avatar-1.png",
   },
   teams: [
     {
-      name: "Shadcnblocks - Admin Kit",
-      logo: ({ className }: { className: string }) => (
-        <Logo className={cn("invert dark:invert-0", className)} />
-      ),
-      plan: "Nextjs + shadcn/ui",
+      name: "Summer Brain Rot",
+      logo: Brain,
+      plan: "Participant Portal",
     },
     {
-      name: "Acme Inc",
+      name: "Web Development",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "Track 1",
     },
     {
-      name: "Acme Corp.",
+      name: "Business Skills",
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "Track 2",
     },
   ],
   navGroups: [
