@@ -1,0 +1,102 @@
+{
+  "hosting": [
+    {
+      "target": "marketing",
+      "public": "apps/marketing/out",
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "headers": [
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            }
+          ]
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "portal",
+      "source": "apps/portal",
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "firebase-functions",
+    "runtime": "nodejs18"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "functions": {
+      "port": 5001
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
+  }
+}

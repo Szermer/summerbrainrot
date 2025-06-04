@@ -115,9 +115,29 @@ summerbrainrot/
 - **Coverage**: 80% minimum threshold
 - **CI/CD**: GitHub Actions with parallel test execution
 
-### Deployment
-- **Marketing**: Static site optimized for CDN
-- **Portal**: Server-side rendering for dynamic features
+### Deployment & Infrastructure
+- **Hosting**: Firebase Hosting with multi-site configuration
+  - Marketing: Static export to `summerbrainrot.com`
+  - Portal: SSR via Firebase Framework Hosting to `summerbrainrot.camp`
+- **Database**: Firebase Firestore with real-time sync
+- **Authentication**: Firebase Auth with Google/Email sign-in
+- **Storage**: Firebase Storage for user uploads and assets
+- **Analytics**: Firebase Analytics + Google Analytics integration
+
+#### Deployment Commands
+```bash
+# Deploy everything (hosting, functions, rules)
+npm run deploy
+
+# Deploy individually
+npm run deploy:marketing    # Marketing site only
+npm run deploy:portal       # Portal app only
+npm run deploy:firestore   # Firestore rules and indexes
+npm run deploy:functions   # Cloud Functions only
+
+# Local development with Firebase emulators
+npm run dev:firebase       # Start Firebase emulators
+```
 
 ## 📚 Educational Integration
 

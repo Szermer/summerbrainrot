@@ -1,8 +1,19 @@
 'use client';
 import { useState, useEffect } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Brain, Code, TrendingUp, Users, Zap, Play } from 'lucide-react';
+
+import {
+  ArrowRight,
+  Brain,
+  Code,
+  TrendingUp,
+  Users,
+  Zap,
+  Play,
+} from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -10,22 +21,26 @@ import { cn } from '@/lib/utils';
 const benefits = [
   {
     title: 'Real Business Skills',
-    description: 'Learn entrepreneurship through building actual products with paying customers.',
+    description:
+      'Learn entrepreneurship through building actual products with paying customers.',
     icon: TrendingUp,
   },
   {
     title: 'Professional Development',
-    description: 'Work with industry-standard tools and practices used by top tech companies.',
+    description:
+      'Work with industry-standard tools and practices used by top tech companies.',
     icon: Code,
   },
   {
     title: 'Collaborative Learning',
-    description: 'Build alongside peers and receive mentorship from experienced developers.',
+    description:
+      'Build alongside peers and receive mentorship from experienced developers.',
     icon: Users,
   },
   {
     title: 'Portfolio Building',
-    description: 'Create authentic projects that demonstrate real-world skills to future employers.',
+    description:
+      'Create authentic projects that demonstrate real-world skills to future employers.',
     icon: Zap,
   },
 ];
@@ -46,29 +61,31 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-brain-rot-mesh overflow-hidden">
+    <section className="bg-brain-rot-mesh relative min-h-screen overflow-hidden">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brain-rot-purple-500/5 via-brain-rot-pink-500/5 to-brain-rot-cyan-500/5" />
-      
+      <div className="from-brain-rot-purple-500/5 via-brain-rot-pink-500/5 to-brain-rot-cyan-500/5 absolute inset-0 bg-gradient-to-br" />
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brain-rot-purple-300/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-brain-rot-pink-300/10 rounded-full blur-3xl animate-float [animation-delay:1s]" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-brain-rot-cyan-300/10 rounded-full blur-3xl animate-float [animation-delay:2s]" />
+        <div className="bg-brain-rot-purple-300/10 animate-float absolute top-1/4 left-1/4 h-96 w-96 rounded-full blur-3xl" />
+        <div className="bg-brain-rot-pink-300/10 animate-float absolute top-3/4 right-1/4 h-96 w-96 rounded-full blur-3xl [animation-delay:1s]" />
+        <div className="bg-brain-rot-cyan-300/10 animate-float absolute top-1/2 left-1/2 h-96 w-96 rounded-full blur-3xl [animation-delay:2s]" />
       </div>
 
       <div className="relative container mx-auto px-6 pt-20 pb-16 lg:pt-32">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20 items-center">
-          
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           {/* Left side - Main content */}
-          <div className={cn(
-            "space-y-8 lg:space-y-12 transition-all duration-1000 ease-out",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}>
-            
+          <div
+            className={cn(
+              'space-y-8 transition-all duration-1000 ease-out lg:space-y-12',
+              isVisible
+                ? 'translate-y-0 opacity-100'
+                : 'translate-y-8 opacity-0',
+            )}
+          >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-brain-rot-purple-200 rounded-full px-4 py-2 text-sm font-medium text-brain-rot-purple-700">
-              <Brain className="w-4 h-4" />
+            <div className="border-brain-rot-purple-200 text-brain-rot-purple-700 inline-flex items-center gap-2 rounded-full border bg-white/80 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+              <Brain className="h-4 w-4" />
               Strategic Learning Laboratory
             </div>
 
@@ -79,37 +96,38 @@ const Hero = () => {
                 <br />
                 <span className="relative">
                   Summer Brain Rot
-                  <div className="absolute -inset-1 bg-brain-rot-gradient opacity-20 blur-xl -z-10 animate-pulse-slow" />
+                  <div className="bg-brain-rot-gradient animate-pulse-slow absolute -inset-1 -z-10 opacity-20 blur-xl" />
                 </span>
               </h1>
-              
-              <p className="text-brand-tagline text-gray-600 max-w-2xl">
-                Where young entrepreneurs learn to build real SaaS businesses through hands-on development. 
-                Turn your digital obsessions into professional advantages.
+
+              <p className="text-brand-tagline max-w-2xl text-gray-600">
+                Where young entrepreneurs learn to build real SaaS businesses
+                through hands-on development. Turn your digital obsessions into
+                professional advantages.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="btn-brand-primary group text-lg px-8 py-4"
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button
+                size="lg"
+                className="btn-brand-primary group px-8 py-4 text-lg"
                 asChild
               >
                 <Link href="/apply">
                   Apply Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="btn-brand-outline group text-lg px-8 py-4"
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="btn-brand-outline group px-8 py-4 text-lg"
                 asChild
               >
                 <Link href="/learn-more">
-                  <Play className="mr-2 w-5 h-5" />
+                  <Play className="mr-2 h-5 w-5" />
                   Watch Demo
                 </Link>
               </Button>
@@ -135,18 +153,24 @@ const Hero = () => {
                   <div
                     key={benefit.title}
                     className={cn(
-                      "card-brand-glow p-4 lg:p-6 transition-all duration-700 ease-out hover:scale-105",
-                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                      'card-brand-glow p-4 transition-all duration-700 ease-out hover:scale-105 lg:p-6',
+                      isVisible
+                        ? 'translate-y-0 opacity-100'
+                        : 'translate-y-4 opacity-0',
                     )}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-brain-rot-gradient rounded-lg flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-white" />
+                      <div className="bg-brain-rot-gradient flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg">
+                        <Icon className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">{benefit.title}</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
+                        <h3 className="mb-1 font-semibold text-gray-900">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-gray-600">
+                          {benefit.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -156,46 +180,54 @@ const Hero = () => {
           </div>
 
           {/* Right side - Visual content */}
-          <div className={cn(
-            "relative transition-all duration-1000 ease-out delay-300",
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-          )}>
-            
+          <div
+            className={cn(
+              'relative transition-all delay-300 duration-1000 ease-out',
+              isVisible
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-8 opacity-0',
+            )}
+          >
             {/* Main visual container */}
             <div className="relative">
-              
               {/* Stats dashboard mockup */}
-              <div className="card-brand-gradient p-6 lg:p-8 space-y-6">
+              <div className="card-brand-gradient space-y-6 p-6 lg:p-8">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-gray-900">Program Impact</h3>
-                  <div className="w-3 h-3 bg-brain-rot-accent-500 rounded-full animate-pulse" />
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Program Impact
+                  </h3>
+                  <div className="bg-brain-rot-accent-500 h-3 w-3 animate-pulse rounded-full" />
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   {stats.map((stat, index) => (
-                    <div 
+                    <div
                       key={stat.label}
-                      className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-white/40"
+                      className="rounded-lg border border-white/40 bg-white/60 p-4 text-center backdrop-blur-sm"
                     >
-                      <div className="text-2xl lg:text-3xl font-bold text-gradient-primary mb-1">
+                      <div className="text-gradient-primary mb-1 text-2xl font-bold lg:text-3xl">
                         {stat.value}
                       </div>
-                      <div className="text-xs lg:text-sm text-gray-600 leading-tight">
+                      <div className="text-xs leading-tight text-gray-600 lg:text-sm">
                         {stat.label}
                       </div>
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Progress visualization */}
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="font-medium text-gray-700">Learning Progress</span>
-                    <span className="text-brain-rot-purple-600">Week 8 of 12</span>
+                    <span className="font-medium text-gray-700">
+                      Learning Progress
+                    </span>
+                    <span className="text-brain-rot-purple-600">
+                      Week 8 of 12
+                    </span>
                   </div>
-                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-brain-rot-gradient rounded-full transition-all duration-2000 ease-out"
+                  <div className="h-2 overflow-hidden rounded-full bg-gray-200">
+                    <div
+                      className="bg-brain-rot-gradient h-full rounded-full transition-all duration-2000 ease-out"
                       style={{ width: isVisible ? '67%' : '0%' }}
                     />
                   </div>
@@ -208,24 +240,25 @@ const Hero = () => {
               </div>
 
               {/* Floating participant cards */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full border-4 border-brain-rot-pink-200 shadow-lg flex items-center justify-center animate-float">
-                <div className="w-8 h-8 bg-brain-rot-pink-gradient rounded-full" />
+              <div className="border-brain-rot-pink-200 animate-float absolute -top-4 -right-4 flex h-16 w-16 items-center justify-center rounded-full border-4 bg-white shadow-lg">
+                <div className="bg-brain-rot-pink-gradient h-8 w-8 rounded-full" />
               </div>
-              
-              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-white rounded-xl border-4 border-brain-rot-cyan-200 shadow-lg p-3 animate-float [animation-delay:1s]">
-                <div className="w-full h-full bg-brain-rot-cyan-gradient rounded-lg flex items-center justify-center">
-                  <Code className="w-6 h-6 text-white" />
+
+              <div className="border-brain-rot-cyan-200 animate-float absolute -bottom-6 -left-6 h-20 w-20 rounded-xl border-4 bg-white p-3 shadow-lg [animation-delay:1s]">
+                <div className="bg-brain-rot-cyan-gradient flex h-full w-full items-center justify-center rounded-lg">
+                  <Code className="h-6 w-6 text-white" />
                 </div>
               </div>
             </div>
 
             {/* Bottom testimonial preview */}
-            <div className="mt-8 card-brand p-4 bg-white/80 backdrop-blur-sm">
+            <div className="card-brand mt-8 bg-white/80 p-4 backdrop-blur-sm">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-brain-rot-purple-gradient rounded-full flex-shrink-0" />
+                <div className="bg-brain-rot-purple-gradient h-10 w-10 flex-shrink-0 rounded-full" />
                 <div>
-                  <p className="text-sm text-gray-600 italic mb-2">
-                    "Finally, a program that gets it. My gaming skills actually became business skills."
+                  <p className="mb-2 text-sm text-gray-600 italic">
+                    "Finally, a program that gets it. My gaming skills actually
+                    became business skills."
                   </p>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
                     <span className="font-medium">Alex, Age 16</span>
@@ -239,9 +272,9 @@ const Hero = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-brain-rot-purple-300 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-brain-rot-purple-500 rounded-full mt-2 animate-pulse" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+          <div className="border-brain-rot-purple-300 flex h-10 w-6 justify-center rounded-full border-2">
+            <div className="bg-brain-rot-purple-500 mt-2 h-3 w-1 animate-pulse rounded-full" />
           </div>
         </div>
       </div>

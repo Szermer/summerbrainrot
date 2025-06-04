@@ -40,9 +40,13 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 ```
 
 ### External Systems
-- **Firebase**: Authentication, database, and hosting
+- **Firebase**: Complete platform for hosting, authentication, database, and storage
+  - Hosting: Multi-site configuration for marketing and portal
+  - Firestore: NoSQL database with real-time sync
+  - Authentication: Google and email/password sign-in
+  - Storage: User uploads and assets
 - **Payment Provider**: Stripe/PayPal for program fees
-- **Analytics**: Google Analytics, Mixpanel for usage tracking
+- **Analytics**: Firebase Analytics + Google Analytics integration
 
 ## Level 2: Container Diagram
 
@@ -89,15 +93,17 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 
 #### Marketing Site
 - **Technology**: Next.js 15 with static export
-- **Deployment**: CDN (Vercel/Netlify)
+- **Deployment**: Firebase Hosting (summerbrainrot.com)
 - **Purpose**: Public information, lead generation
 - **Key Features**: SEO optimization, performance, MDX content
+- **Firebase Integration**: Analytics, performance monitoring
 
 #### Portal App
 - **Technology**: Next.js 15 with SSR
-- **Deployment**: Node.js server (Vercel/Cloud Run)
+- **Deployment**: Firebase Framework Hosting (summerbrainrot.camp)
 - **Purpose**: Authenticated user experience
 - **Key Features**: Dashboard, progress tracking, collaboration tools
+- **Firebase Integration**: Auth, Firestore, Storage, Analytics
 
 #### Shared Packages
 - **Components**: Reusable UI components
@@ -140,10 +146,11 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 │  ┌─────────────────────────────────────────────────┐          │
 │  │               Service Layer                      │          │
 │  │                                                  │          │
-│  │  - Authentication Service                        │          │
-│  │  - Data Persistence Service                     │          │
-│  │  - Analytics Service                            │          │
-│  │  - Notification Service                         │          │
+│  │  - Firebase Auth Service                        │          │
+│  │  - Firestore Data Service                       │          │
+│  │  - Firebase Storage Service                     │          │
+│  │  - Firebase Analytics Service                   │          │
+│  │  - Cloud Functions Service                      │          │
 │  └─────────────────────────────────────────────────┘          │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘

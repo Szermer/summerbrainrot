@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read/write their own data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow cohort members to read basic profile info
+      allow read: if request.auth != null && 
+        request.auth.uid in get(/databases/$(database)/documents/cohorts/$(resource.data.cohort)).data.participants;
+    }
+    
+    // Progress tracking
+    match /progress/{progressId} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == resource.data.userId || 
+         request.auth.uid in get(/databases/$(database)/documents/cohorts/$(resource.data.cohortId)).data.mentors);
+    }
+    
+    // Projects - visible to cohort members
+    match /projects/{projectId} {
+      allow read: if request.auth != null && 
+        (request.auth.uid == resource.data.ownerId ||
+         request.auth.uid in resource.data.collaborators ||
+         request.auth.uid in get(/databases/$(database)/documents/cohorts/$(resource.data.cohortId)).data.participants);
+      
+      allow write: if request.auth != null && 
+        (request.auth.uid == resource.data.ownerId ||
+         request.auth.uid in resource.data.collaborators);
+    }
+    
+    // Cohorts - readable by participants, writable by admins
+    match /cohorts/{cohortId} {
+      allow read: if request.auth != null && 
+        (request.auth.uid in resource.data.participants ||
+         request.auth.uid in resource.data.mentors ||
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+      
+      allow write: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Public content (marketing pages, showcases)
+    match /public/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Application submissions
+    match /applications/{applicationId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.applicantId;
+      
+      allow read: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'mentor'];
+    }
+  }
+}

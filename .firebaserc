@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "summerbrainrot"
+  },
+  "targets": {
+    "summerbrainrot": {
+      "hosting": {
+        "marketing": [
+          "summerbrainrot-com"
+        ],
+        "portal": [
+          "summerbrainrot-camp"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

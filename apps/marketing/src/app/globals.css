@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '../../../packages/brand-assets/typography/font-stack.css';
+/* @import '../../../packages/brand-assets/typography/font-stack.css'; */
 
 @plugin 'tailwindcss-animate';
 @plugin '@tailwindcss/typography';
@@ -217,6 +217,8 @@
   }
 }
 
+/* Brand-specific utility classes */
+
 @layer utilities {
   body {
     font-family: var(--font-inter), sans-serif;
@@ -325,6 +327,11 @@
     line-height: 1.5;
     font-weight: 500;
   }
+  
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
 
   /* Shadow utilities */
   .shadow-brand {
@@ -339,6 +346,68 @@
 
   .shadow-glow-purple {
     box-shadow: 0 0 20px hsla(var(--color-brain-rot-purple-500) / 0.4);
+  }
+  
+  /* Button utilities */
+  .btn-brand-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    background-color: hsl(var(--color-brain-rot-purple-500));
+    color: white;
+  }
+  
+  .btn-brand-primary:hover {
+    background-color: hsl(var(--color-brain-rot-purple-600));
+  }
+  
+  .btn-brand-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    background-color: hsl(var(--color-brain-rot-pink-500));
+    color: white;
+  }
+  
+  .btn-brand-secondary:hover {
+    background-color: hsl(var(--color-brain-rot-pink-600));
+  }
+  
+  .btn-brand-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    border: 1px solid hsl(var(--color-brain-rot-purple-500));
+    color: hsl(var(--color-brain-rot-purple-600));
+    background-color: transparent;
+  }
+  
+  .btn-brand-outline:hover {
+    background-color: hsl(var(--color-brain-rot-purple-50));
   }
 
   .shadow-glow-pink {
@@ -381,34 +450,17 @@
   button {
     cursor: pointer;
   }
+  /* Commented out @apply directives - not supported in Tailwind v4 */
+  /*
   [class*='border'] {
     @apply border-border;
   }
+  */
 
-  /* Brand button components */
-  .btn-brand-primary {
-    @apply bg-brain-rot-gradient text-white font-semibold py-3 px-6 rounded-[--radius-brand] 
-           transition-all duration-200 ease-in-out hover:shadow-brand-lg hover:scale-105 
-           focus:outline-none focus:ring-2 focus:ring-brain-rot-purple-500 focus:ring-offset-2
-           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
-  }
+  /* Brand button components - use the button classes defined earlier in the utilities layer */
 
-  .btn-brand-secondary {
-    @apply bg-brain-rot-cyan-500 text-white font-semibold py-3 px-6 rounded-[--radius-brand]
-           transition-all duration-200 ease-in-out hover:bg-brain-rot-cyan-600 hover:scale-105
-           focus:outline-none focus:ring-2 focus:ring-brain-rot-cyan-500 focus:ring-offset-2
-           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
-  }
-
-  .btn-brand-outline {
-    @apply border-2 border-brain-rot-purple-500 text-brain-rot-purple-500 font-semibold py-3 px-6 
-           rounded-[--radius-brand] transition-all duration-200 ease-in-out 
-           hover:bg-brain-rot-purple-500 hover:text-white hover:scale-105
-           focus:outline-none focus:ring-2 focus:ring-brain-rot-purple-500 focus:ring-offset-2
-           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
-  }
-
-  /* Brand card components */
+  /* Brand card components - commented out due to Tailwind v4 @apply limitations */
+  /*
   .card-brand {
     @apply bg-white border border-gray-200 rounded-[--radius-brand-lg] p-6 shadow-sm
            transition-all duration-300 ease-out;
@@ -427,6 +479,7 @@
   .card-brand-hover {
     @apply hover:shadow-brand-lg hover:scale-[1.02] hover:-translate-y-1;
   }
+  */
 }
 
 /* Dark mode theme updates */
@@ -467,7 +520,8 @@
     --color-ring: var(--color-brain-rot-purple-400); /* Lighter purple for dark mode focus */
   }
 
-  /* Dark mode brand card adjustments */
+  /* Dark mode brand card adjustments - commented out due to @apply limitations */
+  /*
   .dark .card-brand {
     @apply bg-gray-900 border-gray-800;
   }
@@ -479,6 +533,7 @@
   .dark .card-brand-glow {
     @apply bg-gray-900 border-brain-rot-purple-800;
   }
+  */
 }
 
 @layer base {

@@ -1,0 +1,39 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // User profile images
+    match /users/{userId}/profile/{filename} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Project files - accessible to project collaborators
+    match /projects/{projectId}/{allPaths=**} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid in firestore.get(/databases/(default)/documents/projects/$(projectId)).data.collaborators ||
+         request.auth.uid == firestore.get(/databases/(default)/documents/projects/$(projectId)).data.ownerId);
+    }
+    
+    // Portfolio assets - public but only writable by owner
+    match /portfolios/{userId}/{allPaths=**} {
+      allow read: if true; // Public portfolio access
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Public assets (marketing content, brand assets)
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Cohort resources (shared materials, recordings)
+    match /cohorts/{cohortId}/{allPaths=**} {
+      allow read: if request.auth != null && 
+        (request.auth.uid in firestore.get(/databases/(default)/documents/cohorts/$(cohortId)).data.participants ||
+         request.auth.uid in firestore.get(/databases/(default)/documents/cohorts/$(cohortId)).data.mentors);
+      
+      allow write: if request.auth != null && 
+        request.auth.uid in firestore.get(/databases/(default)/documents/cohorts/$(cohortId)).data.mentors;
+    }
+  }
+}

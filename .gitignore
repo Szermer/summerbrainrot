@@ -215,3 +215,9 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+# Environment files
+.env.local
+.env.*.local
+
+# Firebase service account key
+*firebase-adminsdk*.json

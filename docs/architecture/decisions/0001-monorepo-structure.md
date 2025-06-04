@@ -107,6 +107,7 @@ Review this decision after:
 ## Related ADRs
 
 - [ADR-0002](0002-testing-infrastructure.md): Testing Infrastructure - Leverages monorepo structure for shared test utilities
+- [ADR-0003](0003-firebase-platform.md): Firebase Platform - Multi-site hosting configuration benefits from monorepo structure
 
 ## References
 

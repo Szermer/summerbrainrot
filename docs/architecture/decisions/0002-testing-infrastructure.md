@@ -137,6 +137,11 @@ Review this decision after:
 - 100+ tests written
 - Onboarding 20+ participants
 
+## Related ADRs
+
+- [ADR-0001](0001-monorepo-structure.md): Monorepo Structure - Provides workspace configuration for test infrastructure
+- [ADR-0003](0003-firebase-platform.md): Firebase Platform - Firebase emulators integrate with test suite
+
 ## References
 
 - [Vitest Documentation](https://vitest.dev/)
