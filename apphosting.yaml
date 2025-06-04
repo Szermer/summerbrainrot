@@ -1,0 +1,33 @@
+# Firebase Web App Hosting configuration for Summer Brain Rot Portal
+# This file configures the automatic deployment of the portal application
+
+# Environment configuration
+runConfig:
+  # Runtime configuration for the hosted application
+  runtime: nodejs20
+
+# Build configuration
+buildConfig:
+  # Source directory containing the Next.js application
+  rootDirectory: apps/portal
+  
+  # Build commands to execute
+  commands:
+    # Install dependencies using pnpm (as per portal's package manager)
+    - name: install
+      command: pnpm install --frozen-lockfile
+    
+    # Build the Next.js application for production
+    - name: build
+      command: pnpm run build
+  
+  # Output directory containing the built application
+  outputDirectory: .next
+
+# Environment variables (will be automatically injected by Firebase Web App Hosting)
+# These are automatically provided via FIREBASE_WEBAPP_CONFIG environment variable
+# Additional environment variables can be configured in the Firebase Console
+
+# GitHub integration
+# Automatic deployments are triggered by commits to the main branch
+# The repository is connected via GitHub App integration in Firebase Console
