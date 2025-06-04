@@ -1,0 +1,10 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { FAQPage } from '@/components/sections/faq-page';
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <FAQPage client:only='react' />
+</DefaultLayout>

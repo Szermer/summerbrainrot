@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { initializeApp, getApps } from 'firebase/app';
+import { describe, it, expect, vi, beforeAll } from 'vitest';
 
 /**
  * FIREBASE INTEGRATION TEST

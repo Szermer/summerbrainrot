@@ -30,7 +30,11 @@ if (process.env.NODE_ENV === 'development') {
   if (!auth.emulatorConfig) {
     connectAuthEmulator(auth, 'http://localhost:9099');
   }
-  if (!(db as unknown as { _settings?: { host?: string } })._settings?.host?.includes('localhost:8080')) {
+  if (
+    !(
+      db as unknown as { _settings?: { host?: string } }
+    )._settings?.host?.includes('localhost:8080')
+  ) {
     connectFirestoreEmulator(db, 'localhost', 8080);
   }
   try {

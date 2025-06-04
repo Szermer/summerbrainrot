@@ -1,0 +1,19 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import { Navbar } from '@/components/sections/navbar';
+import { Footer } from '@/components/sections/footer';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>		
+        <BaseHead title={title} description={description}  />
+    </head>
+    <body class={`h-screen antialiased`}
+    >
+        <Navbar currentPage={Astro.url.pathname} client:only='react' />
+        <main><slot /></main>
+        <Footer />
+    </body>
+</html>

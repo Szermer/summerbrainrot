@@ -5,13 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Autoplay from 'embla-carousel-autoplay';
-import {
-  ArrowRight,
-  Brain,
-  Code,
-  TrendingUp,
-  Users,
-} from 'lucide-react';
+import { ArrowRight, Brain, Code, TrendingUp, Users } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -72,16 +66,16 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
         <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-bl from-orange-500/10 via-transparent to-yellow-500/10" />
       </div>
-      
+
       <div className="relative container grid gap-12 lg:grid-cols-[1fr_0.68fr]">
         {/* Left side - Content */}
         <div className="space-y-8 lg:space-y-12">
           <div>
-            <h1 className="text-foreground font-normal tracking-tight text-[2.5rem] leading-tight sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem]">
+            <h1 className="text-foreground text-[2.5rem] leading-tight font-normal tracking-tight sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem]">
               Transform Your Summer Brain Rot
             </h1>
 
-            <p className="text-muted-foreground mt-6 text-lg leading-relaxed md:text-xl max-w-2xl">
+            <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-relaxed md:text-xl">
               Where young entrepreneurs learn to build real SaaS businesses
               through hands-on development.
             </p>
@@ -92,15 +86,12 @@ const Hero = () => {
             {features.map((feature) => {
               const Icon = feature.icon;
               return (
-                <div
-                  key={feature.title}
-                  className="flex max-w-[250px] gap-3"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <div key={feature.title} className="flex max-w-[250px] gap-3">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
                     <Icon className="size-5 text-white" />
                   </div>
                   <div>
-                    <h2 className="font-semibold text-foreground mb-1">
+                    <h2 className="text-foreground mb-1 font-semibold">
                       {feature.title}
                     </h2>
                     <p className="text-muted-foreground text-sm leading-relaxed">
@@ -126,11 +117,9 @@ const Hero = () => {
               className="px-6 text-sm font-semibold transition-all max-sm:hidden"
               asChild
             >
-              <Link href="#success-stories">
-                <span className="flex items-center gap-2">
-                  View Success Stories
-                  <ArrowRight className="size-4" />
-                </span>
+              <Link href="#success-stories" className="flex items-center gap-2">
+                View Success Stories
+                <ArrowRight className="size-4" />
               </Link>
             </Button>
           </div>
@@ -138,7 +127,7 @@ const Hero = () => {
           <SlideIndicator
             currentSlide={currentSlide}
             slides={SLIDES}
-            className="mb-4! max-lg:hidden"
+            className="mb-4 max-lg:hidden"
             api={api}
           />
         </div>
@@ -185,7 +174,7 @@ interface SlideIndicatorProps {
   currentSlide: number;
   slides: Array<{ label: string }>;
   className?: string;
-  api: CarouselApi | null;
+  api?: CarouselApi;
 }
 
 const SlideIndicator = ({

@@ -323,7 +323,7 @@ const ProgramShowcase = () => {
                 className="btn-brand-primary group px-8 py-4 text-lg"
                 asChild
               >
-                <Link href="/apply">
+                <Link href="/apply" className="flex items-center">
                   Apply Now
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>

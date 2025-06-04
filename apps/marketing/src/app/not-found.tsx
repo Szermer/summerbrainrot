@@ -1,9 +1,3 @@
-import Link from 'next/link';
-
-import { ArrowLeft } from 'lucide-react';
-
-import { Button } from '@/components/ui/button';
-
 export default function NotFound() {
   return (
     <div className="container flex min-h-[70vh] flex-col items-center justify-center py-28 text-center lg:min-h-[80vh] lg:py-32">
@@ -18,17 +12,12 @@ export default function NotFound() {
         </p>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link href="/">
-            <Button size="lg" className="group min-w-[200px] gap-2">
-              <ArrowLeft className="size-5 transition-transform group-hover:-translate-x-1" />
-              Back to Home
-            </Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="outline" size="lg" className="min-w-[200px]">
-              Contact Support
-            </Button>
-          </Link>
+          <a href="/" className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center rounded-lg px-8 py-3 font-semibold transition-colors group min-w-[200px] gap-2">
+            ← Back to Home
+          </a>
+          <a href="/contact" className="border border-input bg-background hover:bg-accent hover:text-accent-foreground min-w-[200px] rounded-lg px-8 py-3 font-semibold transition-colors">
+            Contact Support
+          </a>
         </div>
       </div>
     </div>

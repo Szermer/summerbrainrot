@@ -10,16 +10,20 @@ export default function GlobalError({
   return (
     <html>
       <body>
-        <div style={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '2rem',
-          textAlign: 'center'
-        }}>
+        <div
+          style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            textAlign: 'center',
+          }}
+        >
           <div>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Something went wrong!</h2>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+              Something went wrong!
+            </h2>
             <button
               onClick={() => reset()}
               style={{
@@ -29,7 +33,7 @@ export default function GlobalError({
                 border: 'none',
                 borderRadius: '0.5rem',
                 cursor: 'pointer',
-                fontSize: '1rem'
+                fontSize: '1rem',
               }}
             >
               Try again

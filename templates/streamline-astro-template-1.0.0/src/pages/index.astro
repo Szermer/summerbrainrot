@@ -1,0 +1,24 @@
+---
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { FAQ } from '@/components/sections/faq';
+import { Feature1 } from '@/components/sections/feature1';
+import { Feature2 } from '@/components/sections/feature2';
+import { Feature3 } from '@/components/sections/feature3';
+import { Hero } from '@/components/sections/hero';
+import Logos from '@/components/sections/logos';
+import { Pricing1 } from '@/components/sections/pricing1';
+import Testimonials from '@/components/sections/testimonials';
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Hero client:only='react' />
+  <Logos />
+  <Feature1 />
+  <Feature2 />
+  <Feature3 client:only='react'/>
+  <Testimonials  client:only='react'/>
+  <Pricing1 client:only='react'/>
+  <FAQ client:only='react'/>
+</DefaultLayout>

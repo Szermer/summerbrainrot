@@ -82,7 +82,7 @@ const Navbar = () => {
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <Brain className="h-8 w-8" />
-              <span className="font-semibold text-lg">Summer Brain Rot</span>
+              <span className="text-lg font-semibold">Summer Brain Rot</span>
             </div>
           </Link>
 
