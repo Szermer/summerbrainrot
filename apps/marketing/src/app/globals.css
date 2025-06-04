@@ -12,116 +12,108 @@
   --font-space-grotesk: 'Space Grotesk', var(--font-inter-tight), sans-serif;
   --font-jetbrains-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 
-  /* Summer Brain Rot Brand Colors */
-  --color-brain-rot-purple-50: 243 240 255; /* #F3F0FF */
-  --color-brain-rot-purple-100: 233 226 255; /* #E9E2FF */
-  --color-brain-rot-purple-200: 214 204 255; /* #D6CCFF */
-  --color-brain-rot-purple-300: 184 165 255; /* #B8A5FF */
-  --color-brain-rot-purple-400: 149 117 255; /* #9575FF */
-  --color-brain-rot-purple-500: 139 92 246; /* #8B5CF6 - Primary brand purple */
-  --color-brain-rot-purple-600: 124 58 237; /* #7C3AED */
-  --color-brain-rot-purple-700: 109 40 217; /* #6D28D9 */
-  --color-brain-rot-purple-800: 91 33 182; /* #5B21B6 */
-  --color-brain-rot-purple-900: 76 29 149; /* #4C1D95 */
-  --color-brain-rot-purple-950: 46 16 101; /* #2E1065 */
+  /* AssemblyAI-inspired Color System */
+  --color-assembly-blue: 37 69 211; /* #2545D3 - Primary brand blue */
+  --color-assembly-navy: 18 25 38; /* #121926 - Dark text */
+  --color-assembly-gray: 96 100 108; /* #60646C - Secondary text */
+  --color-assembly-light: 244 239 236; /* #F4EFEC - Light backgrounds */
+  
+  /* Gradient colors for effects */
+  --color-gradient-purple: 105 97 184; /* #6961B8 */
+  --color-gradient-pink: 227 147 137; /* #E39389 */
+  --color-gradient-orange: 241 131 69; /* #F18345 */
+  --color-gradient-yellow: 249 215 77; /* #F9D74D */
+  --color-gradient-green: 34 156 101; /* #229C65 */
+  --color-gradient-blue: 81 106 220; /* #516ADC */
+  
+  /* Summer Brain Rot Brand Colors (Adapted) */
+  --color-brain-rot-primary: var(--color-assembly-blue); /* Main brand color */
+  --color-brain-rot-dark: var(--color-assembly-navy); /* Dark text */
+  --color-brain-rot-gray: var(--color-assembly-gray); /* Secondary text */
+  --color-brain-rot-light: var(--color-assembly-light); /* Light backgrounds */
+  
+  /* Gradient Definitions */
+  --gradient-purple-pink: linear-gradient(90deg, rgb(105 97 184) 25%, rgb(227 147 137));
+  --gradient-orange-yellow: linear-gradient(90deg, rgb(241 131 69) 25%, rgb(249 215 77));
+  --gradient-green-blue: linear-gradient(90deg, rgb(34 156 101) 25%, rgb(81 106 220));
+  --gradient-blue-purple: linear-gradient(135deg, rgb(37 69 211) 0%, rgb(105 97 184) 100%);
+  --gradient-mesh: radial-gradient(at 40% 20%, rgb(105 97 184) 0%, transparent 50%),
+                   radial-gradient(at 80% 0%, rgb(227 147 137) 0%, transparent 50%),
+                   radial-gradient(at 0% 50%, rgb(241 131 69) 0%, transparent 50%),
+                   radial-gradient(at 80% 50%, rgb(249 215 77) 0%, transparent 50%),
+                   radial-gradient(at 0% 100%, rgb(34 156 101) 0%, transparent 50%),
+                   radial-gradient(at 80% 100%, rgb(81 106 220) 0%, transparent 50%);
 
-  --color-brain-rot-pink-50: 253 242 248; /* #FDF2F8 */
-  --color-brain-rot-pink-100: 252 231 243; /* #FCE7F3 */
-  --color-brain-rot-pink-200: 251 207 232; /* #FBCFE8 */
-  --color-brain-rot-pink-300: 249 168 212; /* #F9A8D4 */
-  --color-brain-rot-pink-400: 244 114 182; /* #F472B6 */
-  --color-brain-rot-pink-500: 236 72 153; /* #EC4899 - Primary brand pink */
-  --color-brain-rot-pink-600: 219 39 119; /* #DB2777 */
-  --color-brain-rot-pink-700: 190 24 93; /* #BE185D */
-  --color-brain-rot-pink-800: 157 23 77; /* #9D174D */
-  --color-brain-rot-pink-900: 131 24 67; /* #831843 */
-  --color-brain-rot-pink-950: 80 7 36; /* #500724 */
-
-  --color-brain-rot-cyan-50: 236 254 255; /* #ECFEFF */
-  --color-brain-rot-cyan-100: 207 250 254; /* #CFFAFE */
-  --color-brain-rot-cyan-200: 165 243 252; /* #A5F3FC */
-  --color-brain-rot-cyan-300: 103 232 249; /* #67E8F9 */
-  --color-brain-rot-cyan-400: 34 211 238; /* #22D3EE */
-  --color-brain-rot-cyan-500: 6 182 212; /* #06B6D4 - Primary brand cyan */
-  --color-brain-rot-cyan-600: 8 145 178; /* #0891B2 */
-  --color-brain-rot-cyan-700: 14 116 144; /* #0E7490 */
-  --color-brain-rot-cyan-800: 21 94 117; /* #155E75 */
-  --color-brain-rot-cyan-900: 22 78 99; /* #164E63 */
-  --color-brain-rot-cyan-950: 8 51 68; /* #083344 */
-
-  --color-brain-rot-accent-50: 236 253 245; /* #ECFDF5 */
-  --color-brain-rot-accent-100: 209 250 229; /* #D1FAE5 */
-  --color-brain-rot-accent-200: 167 243 208; /* #A7F3D0 */
-  --color-brain-rot-accent-300: 110 231 183; /* #6EE7B7 */
-  --color-brain-rot-accent-400: 52 211 153; /* #34D399 */
-  --color-brain-rot-accent-500: 16 185 129; /* #10B981 - Success/growth color */
-  --color-brain-rot-accent-600: 5 150 105; /* #059669 */
-  --color-brain-rot-accent-700: 4 120 87; /* #047857 */
-  --color-brain-rot-accent-800: 6 95 70; /* #065F46 */
-  --color-brain-rot-accent-900: 6 78 59; /* #064E3B */
-  --color-brain-rot-accent-950: 2 44 34; /* #022C22 */
-
-  /* Override primary theme colors with brand colors */
-  --color-primary: var(--color-brain-rot-purple-500);
-  --color-primary-foreground: 255 255 255; /* White text on purple */
+  /* Override primary theme colors with AssemblyAI-inspired colors */
+  --color-primary: var(--color-brain-rot-primary);
+  --color-primary-foreground: 255 255 255; /* White text on blue */
   
   /* Brand-specific mappings */
-  --color-brand-primary: var(--color-brain-rot-purple-500);
-  --color-brand-secondary: var(--color-brain-rot-pink-500);
-  --color-brand-accent: var(--color-brain-rot-cyan-500);
-  --color-brand-success: var(--color-brain-rot-accent-500);
+  --color-brand-primary: var(--color-brain-rot-primary);
+  --color-brand-dark: var(--color-brain-rot-dark);
+  --color-brand-gray: var(--color-brain-rot-gray);
+  --color-brand-light: var(--color-brain-rot-light);
 
   /* Original theme colors (preserved for compatibility) */
-  --color-background: 0 0% 100%; /* #FFFFFF */
-  --color-foreground: 240 10% 4%; /* #09090B */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
   --color-foreground2: hsl(var(--foreground-2));
 
-  --color-card: 0 0% 100%; /* #FFFFFF */
-  --color-card-foreground: 240 10% 4%; /* #09090B */
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
 
-  --color-popover: 0 0% 100%; /* #FFFFFF */
-  --color-popover-foreground: 240 10% 4%; /* #09090B */
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-  --color-secondary: 0 0% 96%; /* #F5F5F5 */
-  --color-secondary-foreground: 0 0% 9%; /* #171717 */
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-  --color-muted: 0 0% 96%; /* #F5F5F5 */
-  --color-muted-foreground: 0 0% 49%; /* #7D7D7D */
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
-  --color-accent: 0 0% 96%; /* #F5F5F5 */
-  --color-accent-foreground: 0 0% 9%; /* #171717 */
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-  --color-destructive: 0 84.2% 60.2%; /* #EF4444 */
-  --color-destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-  --color-border: 0 0% 0% / 0.09; /* #00000017 */
-  --color-input: 0 0% 89.8%; /* #E5E5E5 */
-  --color-ring: var(--color-brain-rot-purple-500); /* Brand purple for focus rings */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 
-  --color-chart-1: 12 76% 61%; /* #E65C41 */
-  --color-chart-2: 173 58% 39%; /* #2A9D8F */
-  --color-chart-3: 197 37% 24%; /* #264653 */
-  --color-chart-4: 43 74% 66%; /* #E9C46A */
-  --color-chart-5: 27 87% 67%; /* #F4A261 */
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
 
-  --color-sand-50: 0 0% 95%; /* #F9F9F9 */
-  --color-sand-100: 45 16% 92%; /* #F2F2F2 */
-  --color-sand-600: 22 10% 57%; /* #737373 */
-  --color-sand-700: 22 5% 52%; /* #666666 */
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-600: var(--sand-600);
+  --color-sand-700: var(--sand-700);
 
-  --color-mint: 162 17% 86%; /* #D6E3DF */
-  --color-mint-50: 108 12% 92%; /* #E9EDE8 */
+  --color-mint: var(--mint);
+  --color-mint-50: var(--mint-50);
 
-  /* Brand-specific spacing and sizing */
+  /* AssemblyAI-inspired spacing and sizing */
   --spacing-9xl: 100rem;
   --spacing-brand: 1.5rem;
   --spacing-brand-lg: 2rem;
   --spacing-brand-xl: 3rem;
+  --spacing-section: 6rem; /* 96px section padding */
+  --spacing-hero: 8rem; /* 128px hero padding */
 
   /* Border radius tokens */
-  --radius-brand: 0.75rem; /* 12px */
+  --radius-brand: 0.5rem; /* 8px - AssemblyAI standard */
   --radius-brand-lg: 1rem; /* 16px */
   --radius-brand-xl: 1.25rem; /* 20px */
+  
+  /* Typography sizes */
+  --text-hero: clamp(2.5rem, 5vw, 4rem); /* 40px to 64px */
+  --text-h2: clamp(2rem, 4vw, 3.5rem); /* 32px to 56px */
+  --text-h3: clamp(1.75rem, 3vw, 3rem); /* 28px to 48px */
+  --text-body: 1.125rem; /* 18px */
+  --text-button: 0.875rem; /* 14px */
 
   /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -185,12 +177,78 @@
 
 @layer utilities {
   body {
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    font-size: var(--text-body);
+    line-height: 1.5;
   }
 
   h1,
   h2 {
-    font-family: var(--font-inter-tight), sans-serif;
+    font-family: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .text-brand-dark {
+    color: rgb(var(--color-brand-dark));
+  }
+  
+  .text-brand-gray {
+    color: rgb(var(--color-brand-gray));
+  }
+  
+  .bg-brand-primary {
+    background-color: rgb(var(--color-brand-primary));
+  }
+  
+  .bg-brand-light {
+    background-color: rgb(var(--color-brand-light));
+  }
+  
+  .border-brand-primary {
+    border-color: rgb(var(--color-brand-primary));
+  }
+  
+  .from-gradient-purple {
+    --tw-gradient-from: rgb(var(--color-gradient-purple));
+  }
+  
+  .to-gradient-pink {
+    --tw-gradient-to: rgb(var(--color-gradient-pink));
+  }
+  
+  .from-gradient-orange {
+    --tw-gradient-from: rgb(var(--color-gradient-orange));
+  }
+  
+  .to-gradient-yellow {
+    --tw-gradient-to: rgb(var(--color-gradient-yellow));
+  }
+  
+  .rounded-radius-brand {
+    border-radius: var(--radius-brand);
+  }
+  
+  .hover\:bg-brand-primary\/90:hover {
+    background-color: rgb(var(--color-brand-primary) / 0.9);
+  }
+  
+  .hover\:bg-brand-primary\/5:hover {
+    background-color: rgb(var(--color-brand-primary) / 0.05);
+  }
+  
+  .from-gradient-purple\/10 {
+    --tw-gradient-from: rgb(var(--color-gradient-purple) / 0.1);
+  }
+  
+  .to-gradient-pink\/10 {
+    --tw-gradient-to: rgb(var(--color-gradient-pink) / 0.1);
+  }
+  
+  .from-gradient-orange\/10 {
+    --tw-gradient-from: rgb(var(--color-gradient-orange) / 0.1);
+  }
+  
+  .to-gradient-yellow\/10 {
+    --tw-gradient-to: rgb(var(--color-gradient-yellow) / 0.1);
   }
 }
 
@@ -204,6 +262,39 @@
 }
 
 @layer base {
+  :root {
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 240 10% 4%; /* #09090B */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 240 10% 4%; /* #09090B */
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 240 10% 4%; /* #09090B */
+    --primary: 139 92 246; /* Summer Brain Rot purple */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 0 0% 96%; /* #F5F5F5 */
+    --secondary-foreground: 0 0% 9%; /* #171717 */
+    --muted: 0 0% 96%; /* #F5F5F5 */
+    --muted-foreground: 0 0% 49%; /* #7D7D7D */
+    --accent: 0 0% 96%; /* #F5F5F5 */
+    --accent-foreground: 0 0% 9%; /* #171717 */
+    --destructive: 0 84.2% 60.2%; /* #EF4444 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 0 0% 0% / 0.09; /* #00000017 */
+    --input: 0 0% 89.8%; /* #E5E5E5 */
+    --ring: 139 92 246; /* Summer Brain Rot purple */
+    --chart-1: 12 76% 61%; /* #E65C41 */
+    --chart-2: 173 58% 39%; /* #2A9D8F */
+    --chart-3: 197 37% 24%; /* #264653 */
+    --chart-4: 43 74% 66%; /* #E9C46A */
+    --chart-5: 27 87% 67%; /* #F4A261 */
+    --sand-50: 0 0% 98%; /* Very light */
+    --sand-100: 244 239 236; /* #F4EFEC - AssemblyAI light */
+    --sand-600: 96 100 108; /* #60646C */
+    --sand-700: 18 25 38; /* #121926 */
+    --mint: 34 156 101; /* #229C65 */
+    --mint-50: 236 253 245; /* Light mint */
+  }
+
   .dark {
     --background: 240 10% 4%; /* #09090B */
     --foreground: 0 0% 100%; /* #FFFFFF */
@@ -229,12 +320,12 @@
     --chart-3: 197 37% 24%; /* #264653 */
     --chart-4: 43 74% 66%; /* #E9C46A */
     --chart-5: 27 87% 67%; /* #F4A261 */
-    --sand-50: 240 10% 10%; /* #19191C */
-    --sand-100: 240 10% 15%; /* #24242B */
-    --sand-600: 240 5% 65%; /* #A1A1A1 */
-    --sand-700: 240 5% 70%; /* #B3B3B3 */
-    --mint: 162 17% 20%; /* #2A3633 */
-    --mint-50: 108 12% 20%; /* #2F332E */
+    --sand-50: hsl(240 10% 10%); /* #19191C */
+    --sand-100: hsl(240 10% 15%); /* #24242B */
+    --sand-600: hsl(240 5% 65%); /* #A1A1A1 */
+    --sand-700: hsl(240 5% 70%); /* #B3B3B3 */
+    --mint: hsl(162 17% 20%); /* #2A3633 */
+    --mint-50: hsl(108 12% 20%); /* #2F332E */
   }
 }
 
