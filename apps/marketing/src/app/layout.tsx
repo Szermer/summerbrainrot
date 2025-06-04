@@ -18,25 +18,26 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://summerbrainrot.com'),
   title: {
-    default: 'Streamline - Modern Next.js Template',
-    template: '%s | Streamline',
+    default: 'Summer Brain Rot - Transform Your Digital Summer',
+    template: '%s | Summer Brain Rot',
   },
   description:
-    'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+    'Where young entrepreneurs learn to build real SaaS businesses through hands-on development. Join the most productive summer program for digital natives.',
   keywords: [
-    'Next.js',
-    'React',
-    'JavaScript',
-    'TypeScript',
-    'TailwindCSS',
-    'Template',
-    'Shadcn/UI',
+    'Summer Program',
+    'Entrepreneurship',
+    'SaaS Development',
+    'Youth Programs',
+    'Coding Bootcamp',
+    'Teen Entrepreneurs',
+    'Digital Skills',
     'Web Development',
   ],
-  authors: [{ name: 'Streamline Team' }],
-  creator: 'Streamline Team',
-  publisher: 'Streamline',
+  authors: [{ name: 'Summer Brain Rot' }],
+  creator: 'Summer Brain Rot',
+  publisher: 'Summer Brain Rot',
   robots: {
     index: true,
     follow: true,
@@ -53,26 +54,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Streamline - Modern Next.js Template',
+    title: 'Summer Brain Rot - Transform Your Digital Summer',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    siteName: 'Streamline',
+      'Where young entrepreneurs learn to build real SaaS businesses through hands-on development. Join the most productive summer program for digital natives.',
+    siteName: 'Summer Brain Rot',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Streamline - Modern Next.js Template',
+        alt: 'Summer Brain Rot - Transform Your Digital Summer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Streamline - Modern Next.js Template',
+    title: 'Summer Brain Rot - Transform Your Digital Summer',
     description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+      'Where young entrepreneurs learn to build real SaaS businesses through hands-on development. Join the most productive summer program for digital natives.',
     images: ['/og-image.jpg'],
-    creator: '@streamline',
+    creator: '@summerbrainrot',
   },
 };
 

@@ -382,32 +382,3 @@ export interface RealtimeUpdate {
   timestamp: Timestamp;
 }
 
-// Export all types
-export type {
-  User,
-  UserProfile,
-  UserProgress,
-  UserSettings,
-  Achievement,
-  Progress,
-  Artifact,
-  PeerFeedback,
-  MentorFeedback,
-  SelfAssessment,
-  Project,
-  ProjectMetrics,
-  Milestone,
-  Cohort,
-  CurriculumModule,
-  Resource,
-  ScheduleEntry,
-  CohortSettings,
-  Application,
-  LearningAnalytics,
-  CohortAnalytics,
-  Notification,
-  SearchResult,
-  SearchFilters,
-  ApiResponse,
-  RealtimeUpdate,
-};

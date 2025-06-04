@@ -79,5 +79,8 @@
     "nextjs"
   ],
   "author": "Stephen Szermer",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^24.10.0"
+  }
 }

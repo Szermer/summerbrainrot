@@ -66,7 +66,7 @@ const Hero = () => {
   }, [api]);
 
   return (
-    <section className="relative overflow-hidden bg-secondary pt-24 md:pt-32 lg:pt-40">
+    <section className="relative overflow-hidden pt-24 md:pt-32 lg:pt-40">
       {/* Gradient mesh background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
@@ -116,14 +116,14 @@ const Hero = () => {
             <Button 
               aria-label="Apply Now" 
               asChild
-              className="bg-primary hover:bg-primary/90 text-white px-6 text-sm font-semibold transition-all"
+              className="px-6 text-sm font-semibold transition-all"
             >
               <Link href="/apply">Apply Now</Link>
             </Button>
             <Button
               aria-label="See success stories from past participants"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/5 px-6 text-sm font-semibold transition-all max-sm:hidden"
+              className="px-6 text-sm font-semibold transition-all max-sm:hidden"
               asChild
             >
               <Link href="#success-stories">

@@ -29,12 +29,12 @@ if (process.env.NODE_ENV === 'development') {
   if (!auth.emulatorConfig) {
     connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
   }
-  if (!(db as any)._settings?.host?.includes('localhost:8080')) {
+  if (!(db as unknown as { _settings?: { host?: string } })._settings?.host?.includes('localhost:8080')) {
     connectFirestoreEmulator(db, 'localhost', 8080);
   }
   try {
     connectStorageEmulator(storage, 'localhost', 9199);
-  } catch (error) {
+  } catch (_error) {
     // Emulator already connected
   }
 }

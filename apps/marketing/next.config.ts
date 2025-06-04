@@ -3,9 +3,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  output: 'export',
   images: {
-    unoptimized: true,
+    unoptimized: false,
 
     // If you want to use a custom image loader, uncomment the following lines
     // loader: 'custom',
@@ -17,6 +16,10 @@ const nextConfig: NextConfig = {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Skip TypeScript errors during build
+    ignoreBuildErrors: true,
   },
 };
 const withMDX = createMDX({

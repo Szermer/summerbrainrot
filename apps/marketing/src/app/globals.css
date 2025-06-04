@@ -263,25 +263,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* #FFFFFF */
-    --foreground: 240 10% 4%; /* #09090B */
+    --background: 244 239 236; /* #F4EFEC - Brand cream */
+    --foreground: 18 25 38; /* #121926 - Brand dark */
     --card: 0 0% 100%; /* #FFFFFF */
-    --card-foreground: 240 10% 4%; /* #09090B */
+    --card-foreground: 18 25 38; /* #121926 - Brand dark */
     --popover: 0 0% 100%; /* #FFFFFF */
-    --popover-foreground: 240 10% 4%; /* #09090B */
-    --primary: 139 92 246; /* Summer Brain Rot purple */
+    --popover-foreground: 18 25 38; /* #121926 - Brand dark */
+    --primary: 37 69 211; /* #2545D3 - Brand blue */
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --secondary: 0 0% 96%; /* #F5F5F5 */
-    --secondary-foreground: 0 0% 9%; /* #171717 */
-    --muted: 0 0% 96%; /* #F5F5F5 */
-    --muted-foreground: 0 0% 49%; /* #7D7D7D */
-    --accent: 0 0% 96%; /* #F5F5F5 */
-    --accent-foreground: 0 0% 9%; /* #171717 */
+    --secondary: 244 239 236; /* #F4EFEC - Brand cream */
+    --secondary-foreground: 18 25 38; /* #121926 - Brand dark */
+    --muted: 244 239 236; /* #F4EFEC - Brand cream */
+    --muted-foreground: 96 100 108; /* #60646C - Brand gray */
+    --accent: 244 239 236; /* #F4EFEC - Brand cream */
+    --accent-foreground: 18 25 38; /* #121926 - Brand dark */
     --destructive: 0 84.2% 60.2%; /* #EF4444 */
     --destructive-foreground: 0 0% 100%; /* #FFFFFF */
     --border: 0 0% 0% / 0.09; /* #00000017 */
     --input: 0 0% 89.8%; /* #E5E5E5 */
-    --ring: 139 92 246; /* Summer Brain Rot purple */
+    --ring: 37 69 211; /* #2545D3 - Brand blue */
     --chart-1: 12 76% 61%; /* #E65C41 */
     --chart-2: 173 58% 39%; /* #2A9D8F */
     --chart-3: 197 37% 24%; /* #264653 */
