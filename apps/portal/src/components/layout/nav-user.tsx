@@ -8,6 +8,8 @@ import {
   LogOut,
 } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
@@ -24,6 +26,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { logout } from "@/lib/firebase/auth"
+import { useToast } from "@/hooks/use-toast"
 
 interface Props {
   user: {
@@ -35,6 +39,34 @@ interface Props {
 
 export function NavUser({ user }: Props) {
   const { isMobile } = useSidebar()
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+  const { toast } = useToast()
+  const router = useRouter()
+
+  async function handleLogout() {
+    setIsLoggingOut(true)
+    
+    try {
+      await logout()
+      
+      toast({
+        title: "Signed out",
+        description: "You have been successfully signed out.",
+      })
+      
+      router.push("/login")
+    } catch (error) {
+      console.error("Logout error:", error)
+      
+      toast({
+        title: "Logout failed",
+        description: "An error occurred while signing out. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoggingOut(false)
+    }
+  }
 
   return (
     <SidebarMenu>
@@ -96,9 +128,9 @@ export function NavUser({ user }: Props) {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout} disabled={isLoggingOut}>
               <LogOut />
-              Log out
+              {isLoggingOut ? "Signing out..." : "Log out"}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

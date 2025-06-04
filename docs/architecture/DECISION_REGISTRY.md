@@ -14,6 +14,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0006](decisions/0006-vercel-deployment.md) | Migration to Vercel for Marketing Site Deployment | Superseded | 2025-01-06 | Deployment |
 | [ADR-0007](decisions/0007-react-version-fix.md) | React Version Downgrade to Fix Build Issues | Accepted | 2025-01-06 | Dependencies |
 | [ADR-0008](decisions/0008-citrus-design-system.md) | Citrus-Themed Design System | Accepted | 2025-01-06 | UI/Design |
+| [ADR-0009](decisions/0009-firebase-authentication-system.md) | Firebase Authentication System Implementation | Accepted | 2025-01-06 | Authentication |
 
 ## Categories
 
@@ -26,13 +27,14 @@ This registry provides a quick reference to all Architecture Decision Records (A
 ### Platform & Infrastructure
 - **ADR-0003**: Firebase platform for hosting, authentication, database, and storage
 
+### Authentication
+- **ADR-0009**: Comprehensive Firebase authentication system with social login and session management
+
 ### UI/Design
 - **ADR-0004**: Restore original template patterns with minimal brand customization
 - **ADR-0005**: Adopt AssemblyAI-inspired design system for modern, professional aesthetic (Superseded by ADR-0008)
 - **ADR-0008**: Migrate to vibrant citrus-themed design system using OKLCH color space
 
-### Authentication (Planned)
-- Coming soon: Cross-domain authentication strategy
 
 ### Deployment
 - **ADR-0003**: Firebase multi-site hosting with automated deployment pipelines
@@ -50,6 +52,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0005 (Design System) builds upon ADR-0004 (Template Patterns) while enhancing visual design
 - ADR-0007 (React Version) supersedes ADR-0006 (Vercel) by fixing the root cause
 - ADR-0008 (Citrus Design) supersedes ADR-0005 (AssemblyAI) with more vibrant branding
+- ADR-0009 (Authentication) builds on ADR-0003 (Firebase Platform) for authentication services
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design
@@ -57,6 +60,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - Firebase platform (ADR-0003) provides infrastructure for authentication and data storage
 - Template patterns (ADR-0004) guides UI development and maintenance strategies
 - Design system (ADR-0005) enhances template patterns with professional aesthetics
+- Authentication system (ADR-0009) provides security foundation for all portal features
 
 ## Review Schedule
 

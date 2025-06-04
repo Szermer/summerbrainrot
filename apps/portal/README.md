@@ -1,27 +1,222 @@
-# Shadcnblocks.com - Admin Kit
+# Summer Brain Rot - Participant Portal
 
-A premium Shadcn admin dashboard by shadcnblocks.com
+The authenticated participant experience platform for the Summer Brain Rot entrepreneurial education program.
+
+## Overview
+
+This portal serves as the central hub for program participants, mentors, and administrators. Built on the shadcn-admin template, it provides:
+
+- **Authentication System**: Firebase Auth with email/password and social login
+- **Role-Based Access**: Participant, mentor, and admin roles
+- **Dashboard Analytics**: Progress tracking and performance metrics
+- **Learning Management**: Educational modules and project tracking
+- **Collaboration Tools**: Team features and mentor interactions
 
 ## Getting Started
 
-Install dependencies
+### Prerequisites
+
+- Node.js 18+ and pnpm
+- Firebase project with Authentication enabled
+- Environment variables configured
+
+### Installation
 
 ```bash
+# Install dependencies
 pnpm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your Firebase configuration
 ```
 
-Start the server
+### Development
 
 ```bash
+# Start development server
 pnpm run dev
+
+# Build for production
+pnpm run build
+
+# Run linter
+pnpm run lint
 ```
+
+The portal will be available at http://localhost:3000
+
+## Authentication
+
+### Firebase Setup
+
+The portal uses Firebase Authentication with the following features:
+
+- **Email/Password Authentication**: Traditional signup/login
+- **Social Authentication**: Google, GitHub, Facebook (when configured)
+- **Password Reset**: Email-based password recovery
+- **Session Management**: Secure HTTP-only cookies
+- **User Profiles**: Firestore-based user data storage
+
+### Environment Configuration
+
+Required environment variables in `.env.local`:
+
+```env
+# Firebase Client Configuration (Public)
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+
+# Firebase Admin Configuration (Server-side)
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_CLIENT_EMAIL=your_service_account_email
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
+
+### User Roles
+
+- **Participant**: Default role for program participants
+- **Mentor**: Assigned to program mentors and advisors
+- **Admin**: Full access to platform administration
+
+### Authentication Flow
+
+1. User visits protected route
+2. AuthProvider checks authentication state
+3. Redirects to `/login` if not authenticated
+4. After successful login, redirects to intended destination
+5. Session maintained with HTTP-only cookies
 
 ## Tech Stack
 
-- shadcn/ui
-- TailwindCSS v4
-- Next.js
-- React 19
-- TypeScript
-- Eslint v9
-- Prettier
+### Core Framework
+- **Next.js 15**: App Router with TypeScript
+- **React 19**: Latest React features
+- **TypeScript**: Strict type checking
+
+### Authentication & Backend
+- **Firebase Auth**: Authentication service
+- **Firebase Firestore**: User profiles and data
+- **Firebase Admin SDK**: Server-side operations
+
+### UI & Styling
+- **shadcn/ui**: Component library
+- **Tailwind CSS v4**: Utility-first styling
+- **Radix UI**: Accessible primitives
+- **Lucide Icons**: Icon system
+
+### Development Tools
+- **ESLint v9**: Code linting
+- **Prettier**: Code formatting
+- **pnpm**: Package management
+
+### Data & State
+- **React Hook Form**: Form handling
+- **Zod**: Schema validation
+- **TanStack Table**: Data tables
+- **Recharts**: Data visualization
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── (auth)/            # Authentication pages
+│   │   ├── login/         # Login form
+│   │   ├── register/      # Registration form
+│   │   └── forgot-password/ # Password reset
+│   ├── (dashboard)/       # Protected dashboard routes
+│   ├── api/               # API routes
+│   │   └── auth/          # Authentication endpoints
+│   └── globals.css        # Global styles
+├── components/
+│   ├── auth/              # Authentication components
+│   │   └── auth-provider.tsx # Auth context provider
+│   ├── layout/            # Layout components
+│   └── ui/                # shadcn/ui components
+├── lib/
+│   └── firebase/          # Firebase configuration
+│       ├── client.ts      # Client-side Firebase
+│       ├── admin.ts       # Server-side Firebase
+│       └── auth.ts        # Authentication service
+└── middleware.ts          # Route protection
+```
+
+## Features
+
+### Authentication Features
+- ✅ Email/password registration and login
+- ✅ Social authentication (Google, GitHub, Facebook)
+- ✅ Password reset functionality
+- ✅ Session management with HTTP-only cookies
+- ✅ Route protection middleware
+- ✅ User profile management
+- ✅ Role-based access control
+
+### Dashboard Features
+- 📊 Multiple dashboard layouts
+- 📈 Analytics and reporting
+- 👥 User management
+- 📋 Task management with data tables
+- ⚙️ Settings and preferences
+- 🔧 Developer tools (API keys, webhooks)
+
+### Planned Features
+- 🎓 Learning modules and progress tracking
+- 💬 Collaboration and messaging
+- 🏆 Achievement and badge system
+- 📱 Mobile responsiveness improvements
+- 🔔 Real-time notifications
+
+## Development
+
+### Authentication Testing
+
+Test accounts for development:
+- Email: test@example.com
+- Password: test123456
+
+### Build and Deployment
+
+```bash
+# Build for production
+pnpm run build
+
+# Test production build locally
+pnpm run start
+
+# Deploy to Firebase (from root directory)
+firebase deploy --only hosting:portal
+```
+
+### Code Quality
+
+```bash
+# Run linter
+pnpm run lint
+
+# Fix linting issues  
+pnpm run lint:fix
+
+# Check formatting
+pnpm run format
+
+# Fix formatting
+pnpm run format:fix
+```
+
+## Contributing
+
+1. Follow the existing code style and patterns
+2. Use TypeScript strict mode
+3. Add proper error handling
+4. Test authentication flows thoroughly
+5. Update documentation for new features
+
+## License
+
+This project is part of the Summer Brain Rot educational platform.

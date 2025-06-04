@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import SearchProvider from "@/components/search-provider"
 import { ThemeProvider } from "@/components/theme-provider"
+import { AuthProvider } from "@/components/auth/auth-provider"
+import { Toaster } from "@/components/ui/toaster"
 
 interface Props {
   children: React.ReactNode
@@ -29,7 +31,12 @@ export function Providers({ children }: Props) {
       enableSystem
       disableTransitionOnChange
     >
-      <SearchProvider value={{ open, setOpen }}>{children}</SearchProvider>
+      <AuthProvider>
+        <SearchProvider value={{ open, setOpen }}>
+          {children}
+          <Toaster />
+        </SearchProvider>
+      </AuthProvider>
     </ThemeProvider>
   )
 }

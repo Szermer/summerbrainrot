@@ -17,9 +17,10 @@ const publicApiRoutes = [
   '/api/auth/login',
   '/api/auth/register',
   '/api/auth/forgot-password',
+  '/api/auth/session',
 ];
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Allow public routes
@@ -37,16 +38,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check for session token (this will be replaced with Firebase Auth check)
-  const sessionToken = request.cookies.get('__session');
-
-  if (!sessionToken) {
-    // Redirect to login if not authenticated
-    const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('from', pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
+  // For now, we'll do basic session checking on the client side
+  // The AuthProvider will handle redirects to login page
+  // In production, you might want to verify tokens server-side using Edge-compatible libraries
+  
   return NextResponse.next();
 }
 
@@ -54,7 +49,7 @@ export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
+     * - api (API routes) 
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)

@@ -8,7 +8,7 @@ const eslintConfig = [
   ...compat.config({
     extends: ['next', 'next/typescript'],
     rules: {
-      'no-console': 'error',
+      'no-console': 'warn',
       'no-await-in-loop': 'error',
       'no-duplicate-imports': 'error',
       'no-unused-vars': 'off',

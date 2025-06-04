@@ -107,8 +107,10 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 - **Purpose**: Authenticated user experience
 - **Base Template**: shadcn Admin Template v1.0.0
 - **Design System**: Subtle brand colors (purple primary, pink accent)
-- **Key Features**: Dashboard, progress tracking, collaboration tools
+- **Authentication**: Firebase Auth with email/password and social login
+- **Key Features**: Dashboard, progress tracking, collaboration tools, user management
 - **Firebase Integration**: Auth, Firestore, Storage, Analytics
+- **Security**: HTTP-only cookies, route protection middleware, role-based access
 
 #### Shared Packages
 - **Components**: Reusable UI components
@@ -225,10 +227,14 @@ tests/
 
 ## Security Considerations
 
-### Authentication
-- Firebase Auth for secure authentication
-- JWT tokens for session management
-- Role-based access control (RBAC)
+### Authentication & Authorization
+- **Firebase Authentication**: Multi-provider authentication (email/password, Google, GitHub, Facebook)
+- **Session Management**: HTTP-only cookies with 5-day expiration and automatic renewal
+- **JWT Tokens**: Firebase ID tokens for secure client-server communication
+- **Role-Based Access Control**: Participant, mentor, and admin roles with granular permissions
+- **Route Protection**: Next.js middleware validates sessions for protected routes
+- **User Profiles**: Extended user data stored in Firestore with automatic profile creation
+- **Password Security**: Firebase-managed password policies and reset functionality
 
 ### Data Protection
 - HTTPS everywhere

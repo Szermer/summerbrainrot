@@ -93,9 +93,10 @@ summerbrainrot/
 
 ### Participant Portal (`apps/portal/`)
 - **Domain**: summerbrainrot.camp  
-- **Technology**: Next.js with SSR
+- **Technology**: Next.js with SSR, Firebase Authentication
 - **Purpose**: Authenticated participant experience, progress tracking, collaboration
 - **Target Audience**: Current participants, mentors, program administrators
+- **Authentication**: Firebase Auth with email/password and social login
 
 ## 🛠 Technology Stack
 
