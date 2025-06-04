@@ -1,7 +1,7 @@
 # ADR-0006: Migration to Vercel for Marketing Site Deployment
 
 ## Status
-Accepted
+Superseded by [ADR-0007: React Version Fix](./0007-react-version-fix.md)
 
 ## Date
 2025-01-06

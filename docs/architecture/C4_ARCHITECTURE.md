@@ -97,7 +97,7 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 - **Deployment**: Firebase Hosting (summerbrainrot.com)
 - **Purpose**: Public information, lead generation
 - **Base Template**: Streamline Next.js Template v1.1.0
-- **Design System**: AssemblyAI-inspired with blue (#2545D3) primary, clean typography
+- **Design System**: Citrus-themed with lime green (oklch(0.8719 0.1829 125.59)) primary, Alexandria typography
 - **Key Features**: SEO optimization, performance, MDX content, carousel hero
 - **Firebase Integration**: Analytics, performance monitoring
 
@@ -276,6 +276,13 @@ tests/
 - Microservices architecture consideration
 - GraphQL API layer
 - Edge computing for global performance
+
+### Design System Evolution
+- **Phase 1**: Template restoration with minimal branding
+- **Phase 2**: AssemblyAI-inspired professional design (superseded)
+- **Phase 3**: Citrus-themed vibrant design with OKLCH colors (current)
+- Modern pricing component with monthly/yearly toggle
+- Enhanced typography with Alexandria font family
 
 ---
 

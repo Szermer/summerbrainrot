@@ -1,7 +1,7 @@
 # ADR-0005: AssemblyAI-Inspired Design System
 
 ## Status
-Accepted
+Superseded by [ADR-0008: Citrus-Themed Design System](./0008-citrus-design-system.md)
 
 ## Date
 2025-01-06

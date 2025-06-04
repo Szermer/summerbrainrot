@@ -8,7 +8,7 @@ The public-facing marketing site for Summer Brain Rot, where young entrepreneurs
 
 ## Overview
 
-This marketing site serves as the primary entry point for potential participants, parents, and program alumni. It features an AssemblyAI-inspired design system with clean typography, vibrant gradients, and a modern aesthetic.
+This marketing site serves as the primary entry point for potential participants, parents, and program alumni. It features a vibrant citrus-themed design system with modern typography and energetic colors that capture the dynamic spirit of entrepreneurship.
 
 ## Getting Started
 
@@ -28,31 +28,33 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Styling**: Tailwind CSS v4 with custom design system
 - **Components**: shadcn/ui component library
 - **Hosting**: Firebase Hosting (static export)
-- **Typography**: Inter & Inter Tight fonts
+- **Typography**: Alexandria font family
 - **Icons**: Lucide React
 
 ## Design System
 
 ### Color Palette
 
-Inspired by AssemblyAI's clean, professional aesthetic:
+Features a vibrant citrus-themed color system using modern OKLCH color space:
 
-- **Primary Blue**: `#2545D3` - CTAs and primary actions
-- **Dark Navy**: `#121926` - Main text and headers
-- **Gray**: `#60646C` - Secondary text
-- **Light Background**: `#F4EFEC` - Subtle off-white backgrounds
+- **Primary Citrus**: `oklch(0.8719 0.1829 125.59)` - Bright lime/citrus green for CTAs and primary actions
+- **Secondary Teal**: `oklch(0.5591 0.0631 185.87)` - Complementary teal for accents
+- **Dark Text**: `oklch(0.269 0 0)` - Near-black for main content
+- **Gray**: `oklch(0.439 0 0)` - For secondary text
+- **Light Background**: `oklch(0.9851 0 0)` - Clean, minimal backgrounds
 
-### Gradients
+### Color System Features
 
-- **Purple to Pink**: For decorative elements and feature icons
-- **Orange to Yellow**: Background accents
-- **Green to Blue**: Additional gradient options
+- **OKLCH Color Space**: Perceptually uniform colors for better consistency
+- **Light/Dark Mode**: Full dark mode support with adjusted color values
+- **Accessible Contrast**: All color combinations meet WCAG guidelines
 
 ### Typography
 
-- **Headings**: Inter Tight, responsive sizing (40px to 64px)
-- **Body**: Inter, 18px base size with 1.5 line height
-- **Buttons**: 14px with 600 font weight
+- **Primary Font**: Alexandria - Modern, clean sans-serif
+- **Body Text**: 18px base size with optimal line height
+- **Headings**: Responsive sizing from 2.5rem to 4rem
+- **Font Weights**: 400 for body, 600-700 for emphasis
 
 ### Components
 
@@ -98,7 +100,9 @@ firebase deploy --only hosting:marketing
 
 ## Recent Updates
 
-- **2025-01-06**: Implemented AssemblyAI-inspired design system
-- **2025-01-06**: Updated color palette and typography
-- **2025-01-06**: Enhanced hero section with gradient backgrounds
-- **2025-01-06**: Improved button and component styling
+- **2025-01-06**: Migrated to vibrant citrus-themed design system
+- **2025-01-06**: Implemented OKLCH color space for better color consistency
+- **2025-01-06**: Updated typography to Alexandria font family
+- **2025-01-06**: Enhanced pricing component with monthly/yearly toggle
+- **2025-01-06**: Fixed React version compatibility issues
+- **2025-01-06**: Improved button styling with citrus green CTAs

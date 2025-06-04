@@ -10,9 +10,10 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0002](decisions/0002-testing-infrastructure.md) | Testing Infrastructure with Vitest and Playwright | Accepted | 2025-01-06 | Testing |
 | [ADR-0003](decisions/0003-firebase-platform.md) | Firebase Platform for Hosting and Backend Services | Accepted | 2025-01-06 | Platform |
 | [ADR-0004](decisions/0004-template-pattern-restoration.md) | Template Pattern Restoration | Accepted | 2025-01-06 | UI/Design |
-| [ADR-0005](decisions/0005-assemblyai-design-system.md) | AssemblyAI-Inspired Design System | Accepted | 2025-01-06 | UI/Design |
+| [ADR-0005](decisions/0005-assemblyai-design-system.md) | AssemblyAI-Inspired Design System | Superseded | 2025-01-06 | UI/Design |
 | [ADR-0006](decisions/0006-vercel-deployment.md) | Migration to Vercel for Marketing Site Deployment | Superseded | 2025-01-06 | Deployment |
 | [ADR-0007](decisions/0007-react-version-fix.md) | React Version Downgrade to Fix Build Issues | Accepted | 2025-01-06 | Dependencies |
+| [ADR-0008](decisions/0008-citrus-design-system.md) | Citrus-Themed Design System | Accepted | 2025-01-06 | UI/Design |
 
 ## Categories
 
@@ -27,7 +28,8 @@ This registry provides a quick reference to all Architecture Decision Records (A
 
 ### UI/Design
 - **ADR-0004**: Restore original template patterns with minimal brand customization
-- **ADR-0005**: Adopt AssemblyAI-inspired design system for modern, professional aesthetic
+- **ADR-0005**: Adopt AssemblyAI-inspired design system for modern, professional aesthetic (Superseded by ADR-0008)
+- **ADR-0008**: Migrate to vibrant citrus-themed design system using OKLCH color space
 
 ### Authentication (Planned)
 - Coming soon: Cross-domain authentication strategy
@@ -47,6 +49,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0004 (Template Patterns) relates to ADR-0001 (Monorepo) for template preservation
 - ADR-0005 (Design System) builds upon ADR-0004 (Template Patterns) while enhancing visual design
 - ADR-0007 (React Version) supersedes ADR-0006 (Vercel) by fixing the root cause
+- ADR-0008 (Citrus Design) supersedes ADR-0005 (AssemblyAI) with more vibrant branding
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design

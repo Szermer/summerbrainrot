@@ -8,21 +8,15 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-export default function Pricing({
-  headerTag = 'h2',
-}: {
-  headerTag?: 'h1' | 'h2';
-}) {
+const Pricing4 = () => {
   const [isAnnually, setIsAnnually] = useState(false);
-  const HeaderTag = headerTag;
-  
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-7xl flex-col gap-6">
-          <HeaderTag className="text-4xl font-bold text-pretty lg:text-6xl">
+          <h2 className="text-4xl font-bold text-pretty lg:text-6xl">
             Summer Brain Rot Pricing
-          </HeaderTag>
+          </h2>
           <div className="flex flex-col justify-between gap-10 md:flex-row">
             <p className="max-w-3xl text-muted-foreground lg:text-xl">
               Join the premier entrepreneurship program designed to combat the summer brain drain. Choose the plan that fits your ambitions.
@@ -73,19 +67,19 @@ export default function Pricing({
               <div className="flex flex-col justify-between gap-20">
                 <ul className="space-y-4 text-muted-foreground">
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Access to learning resources</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Community Discord access</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Weekly virtual events</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Basic project templates</span>
                   </li>
                 </ul>
@@ -109,19 +103,19 @@ export default function Pricing({
               <div className="flex h-full flex-col justify-between gap-20">
                 <ul className="space-y-4 text-muted-foreground">
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Everything in Explorer</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>1-on-1 mentorship sessions</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Advanced workshops & labs</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Project collaboration tools</span>
                   </li>
                 </ul>
@@ -145,19 +139,19 @@ export default function Pricing({
               <div className="flex h-full flex-col justify-between gap-20">
                 <ul className="space-y-4 text-muted-foreground">
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Everything in Innovator</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Incubator program access</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Investor connections</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="size-4 text-primary" />
+                    <Check className="size-4" />
                     <span>Priority support & resources</span>
                   </li>
                 </ul>
@@ -169,4 +163,6 @@ export default function Pricing({
       </div>
     </section>
   );
-}
+};
+
+export { Pricing4 };
