@@ -1,7 +1,6 @@
 {
   "name": "streamline-nextjs-template",
   "version": "1.1.0",
-  "author": "Shadcnblocks.com",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -27,10 +26,10 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
+    "firebase": "^11.1.0",
     "lucide-react": "^0.474.0",
     "next": "15.1.1",
     "next-themes": "^0.4.4",
-    "puppeteer": "^24.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
