@@ -1,0 +1,19 @@
+# <type>(<scope>): <subject>
+# Example: feat(portal): add progress tracking dashboard
+#
+# Type: feat, fix, docs, style, refactor, perf, test, chore
+# Scope: marketing, portal, shared, config, docs
+# Subject: imperative mood, max 50 chars
+
+# Body: Explain *what* and *why* (not how), wrap at 72 chars
+# Include motivation, previous behavior, and new behavior
+
+# Footer: Reference issues, breaking changes
+# Fixes #123
+# BREAKING CHANGE: description
+
+# Remember:
+# - One commit = one logical change
+# - Include tests with features
+# - Update docs in same commit
+# - Think about educational value

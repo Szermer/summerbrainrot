@@ -1,0 +1,500 @@
+@import 'tailwindcss';
+@import '../../../packages/brand-assets/typography/font-stack.css';
+
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@variant dark (&:is(.dark *));
+
+@theme {
+  --font-inter: var(--font-inter);
+  --font-inter-tight: var(--font-inter-tight);
+  --font-space-grotesk: 'Space Grotesk', var(--font-inter-tight), sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* Summer Brain Rot Brand Colors */
+  --color-brain-rot-purple-50: 243 240 255; /* #F3F0FF */
+  --color-brain-rot-purple-100: 233 226 255; /* #E9E2FF */
+  --color-brain-rot-purple-200: 214 204 255; /* #D6CCFF */
+  --color-brain-rot-purple-300: 184 165 255; /* #B8A5FF */
+  --color-brain-rot-purple-400: 149 117 255; /* #9575FF */
+  --color-brain-rot-purple-500: 139 92 246; /* #8B5CF6 - Primary brand purple */
+  --color-brain-rot-purple-600: 124 58 237; /* #7C3AED */
+  --color-brain-rot-purple-700: 109 40 217; /* #6D28D9 */
+  --color-brain-rot-purple-800: 91 33 182; /* #5B21B6 */
+  --color-brain-rot-purple-900: 76 29 149; /* #4C1D95 */
+  --color-brain-rot-purple-950: 46 16 101; /* #2E1065 */
+
+  --color-brain-rot-pink-50: 253 242 248; /* #FDF2F8 */
+  --color-brain-rot-pink-100: 252 231 243; /* #FCE7F3 */
+  --color-brain-rot-pink-200: 251 207 232; /* #FBCFE8 */
+  --color-brain-rot-pink-300: 249 168 212; /* #F9A8D4 */
+  --color-brain-rot-pink-400: 244 114 182; /* #F472B6 */
+  --color-brain-rot-pink-500: 236 72 153; /* #EC4899 - Primary brand pink */
+  --color-brain-rot-pink-600: 219 39 119; /* #DB2777 */
+  --color-brain-rot-pink-700: 190 24 93; /* #BE185D */
+  --color-brain-rot-pink-800: 157 23 77; /* #9D174D */
+  --color-brain-rot-pink-900: 131 24 67; /* #831843 */
+  --color-brain-rot-pink-950: 80 7 36; /* #500724 */
+
+  --color-brain-rot-cyan-50: 236 254 255; /* #ECFEFF */
+  --color-brain-rot-cyan-100: 207 250 254; /* #CFFAFE */
+  --color-brain-rot-cyan-200: 165 243 252; /* #A5F3FC */
+  --color-brain-rot-cyan-300: 103 232 249; /* #67E8F9 */
+  --color-brain-rot-cyan-400: 34 211 238; /* #22D3EE */
+  --color-brain-rot-cyan-500: 6 182 212; /* #06B6D4 - Primary brand cyan */
+  --color-brain-rot-cyan-600: 8 145 178; /* #0891B2 */
+  --color-brain-rot-cyan-700: 14 116 144; /* #0E7490 */
+  --color-brain-rot-cyan-800: 21 94 117; /* #155E75 */
+  --color-brain-rot-cyan-900: 22 78 99; /* #164E63 */
+  --color-brain-rot-cyan-950: 8 51 68; /* #083344 */
+
+  --color-brain-rot-accent-50: 236 253 245; /* #ECFDF5 */
+  --color-brain-rot-accent-100: 209 250 229; /* #D1FAE5 */
+  --color-brain-rot-accent-200: 167 243 208; /* #A7F3D0 */
+  --color-brain-rot-accent-300: 110 231 183; /* #6EE7B7 */
+  --color-brain-rot-accent-400: 52 211 153; /* #34D399 */
+  --color-brain-rot-accent-500: 16 185 129; /* #10B981 - Success/growth color */
+  --color-brain-rot-accent-600: 5 150 105; /* #059669 */
+  --color-brain-rot-accent-700: 4 120 87; /* #047857 */
+  --color-brain-rot-accent-800: 6 95 70; /* #065F46 */
+  --color-brain-rot-accent-900: 6 78 59; /* #064E3B */
+  --color-brain-rot-accent-950: 2 44 34; /* #022C22 */
+
+  /* Override primary theme colors with brand colors */
+  --color-primary: var(--color-brain-rot-purple-500);
+  --color-primary-foreground: 255 255 255; /* White text on purple */
+  
+  /* Brand-specific mappings */
+  --color-brand-primary: var(--color-brain-rot-purple-500);
+  --color-brand-secondary: var(--color-brain-rot-pink-500);
+  --color-brand-accent: var(--color-brain-rot-cyan-500);
+  --color-brand-success: var(--color-brain-rot-accent-500);
+
+  /* Original theme colors (preserved for compatibility) */
+  --color-background: 0 0% 100%; /* #FFFFFF */
+  --color-foreground: 240 10% 4%; /* #09090B */
+  --color-foreground2: hsl(var(--foreground-2));
+
+  --color-card: 0 0% 100%; /* #FFFFFF */
+  --color-card-foreground: 240 10% 4%; /* #09090B */
+
+  --color-popover: 0 0% 100%; /* #FFFFFF */
+  --color-popover-foreground: 240 10% 4%; /* #09090B */
+
+  --color-secondary: 0 0% 96%; /* #F5F5F5 */
+  --color-secondary-foreground: 0 0% 9%; /* #171717 */
+
+  --color-muted: 0 0% 96%; /* #F5F5F5 */
+  --color-muted-foreground: 0 0% 49%; /* #7D7D7D */
+
+  --color-accent: 0 0% 96%; /* #F5F5F5 */
+  --color-accent-foreground: 0 0% 9%; /* #171717 */
+
+  --color-destructive: 0 84.2% 60.2%; /* #EF4444 */
+  --color-destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+  --color-border: 0 0% 0% / 0.09; /* #00000017 */
+  --color-input: 0 0% 89.8%; /* #E5E5E5 */
+  --color-ring: var(--color-brain-rot-purple-500); /* Brand purple for focus rings */
+
+  --color-chart-1: 12 76% 61%; /* #E65C41 */
+  --color-chart-2: 173 58% 39%; /* #2A9D8F */
+  --color-chart-3: 197 37% 24%; /* #264653 */
+  --color-chart-4: 43 74% 66%; /* #E9C46A */
+  --color-chart-5: 27 87% 67%; /* #F4A261 */
+
+  --color-sand-50: 0 0% 95%; /* #F9F9F9 */
+  --color-sand-100: 45 16% 92%; /* #F2F2F2 */
+  --color-sand-600: 22 10% 57%; /* #737373 */
+  --color-sand-700: 22 5% 52%; /* #666666 */
+
+  --color-mint: 162 17% 86%; /* #D6E3DF */
+  --color-mint-50: 108 12% 92%; /* #E9EDE8 */
+
+  /* Brand-specific spacing and sizing */
+  --spacing-9xl: 100rem;
+  --spacing-brand: 1.5rem;
+  --spacing-brand-lg: 2rem;
+  --spacing-brand-xl: 3rem;
+
+  /* Border radius tokens */
+  --radius-brand: 0.75rem; /* 12px */
+  --radius-brand-lg: 1rem; /* 16px */
+  --radius-brand-xl: 1.25rem; /* 20px */
+
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-gradient: gradient 6s ease infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes gradient {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px hsl(var(--color-brain-rot-purple-500)), 
+                   0 0 10px hsl(var(--color-brain-rot-purple-500)), 
+                   0 0 15px hsl(var(--color-brain-rot-purple-500));
+    }
+    to {
+      text-shadow: 0 0 10px hsl(var(--color-brain-rot-pink-500)), 
+                   0 0 20px hsl(var(--color-brain-rot-pink-500)), 
+                   0 0 30px hsl(var(--color-brain-rot-pink-500));
+    }
+  }
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px); 
+    }
+    50% { 
+      transform: translateY(-10px); 
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1228px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-inter-tight), sans-serif;
+  }
+
+  /* Summer Brain Rot Brand Utilities */
+  .font-display {
+    font-family: var(--font-space-grotesk);
+  }
+
+  .font-mono {
+    font-family: var(--font-jetbrains-mono);
+  }
+
+  /* Gradient text utilities */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--color-brain-rot-purple-500)), 
+      hsl(var(--color-brain-rot-pink-500))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-electric {
+    background: linear-gradient(135deg, 
+      hsl(var(--color-brain-rot-cyan-500)), 
+      hsl(var(--color-brain-rot-purple-500))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-success {
+    background: linear-gradient(135deg, 
+      hsl(var(--color-brain-rot-accent-500)), 
+      hsl(var(--color-brain-rot-cyan-500))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-hero {
+    background: linear-gradient(135deg, 
+      hsl(var(--color-brain-rot-purple-500)), 
+      hsl(var(--color-brain-rot-pink-500)), 
+      hsl(var(--color-brain-rot-cyan-500))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-animated {
+    animation: var(--animate-gradient);
+  }
+
+  /* Background utilities */
+  .bg-brain-rot-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--color-brain-rot-purple-500)), 
+      hsl(var(--color-brain-rot-pink-500)), 
+      hsl(var(--color-brain-rot-cyan-500))
+    );
+  }
+
+  .bg-brain-rot-mesh {
+    background: 
+      radial-gradient(circle at 20% 50%, hsla(var(--color-brain-rot-purple-500) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(var(--color-brain-rot-pink-500) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsla(var(--color-brain-rot-cyan-500) / 0.15) 0%, transparent 50%);
+  }
+
+  /* Brand typography styles */
+  .text-brand-hero {
+    font-family: var(--font-space-grotesk);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-brand-subtitle {
+    font-family: var(--font-space-grotesk);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .text-brand-tagline {
+    font-family: var(--font-inter);
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* Shadow utilities */
+  .shadow-brand {
+    box-shadow: 0 4px 14px 0 hsla(var(--color-brain-rot-purple-500) / 0.15);
+  }
+
+  .shadow-brand-lg {
+    box-shadow: 
+      0 10px 25px -3px hsla(var(--color-brain-rot-purple-500) / 0.15), 
+      0 4px 6px -2px hsla(var(--color-brain-rot-purple-500) / 0.05);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 0 20px hsla(var(--color-brain-rot-purple-500) / 0.4);
+  }
+
+  .shadow-glow-pink {
+    box-shadow: 0 0 20px hsla(var(--color-brain-rot-pink-500) / 0.4);
+  }
+
+  .shadow-glow-cyan {
+    box-shadow: 0 0 20px hsla(var(--color-brain-rot-cyan-500) / 0.4);
+  }
+
+  /* Border utilities */
+  .border-gradient-primary {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, 
+                  hsl(var(--color-brain-rot-purple-500)), 
+                  hsl(var(--color-brain-rot-pink-500))
+                ) border-box;
+  }
+
+  /* Animation utilities */
+  .animate-glow {
+    animation: var(--animate-glow);
+  }
+
+  .animate-float {
+    animation: var(--animate-float);
+  }
+
+  .animate-gradient {
+    animation: var(--animate-gradient);
+  }
+
+  .animate-pulse-slow {
+    animation: var(--animate-pulse-slow);
+  }
+}
+
+@layer components {
+  button {
+    cursor: pointer;
+  }
+  [class*='border'] {
+    @apply border-border;
+  }
+
+  /* Brand button components */
+  .btn-brand-primary {
+    @apply bg-brain-rot-gradient text-white font-semibold py-3 px-6 rounded-[--radius-brand] 
+           transition-all duration-200 ease-in-out hover:shadow-brand-lg hover:scale-105 
+           focus:outline-none focus:ring-2 focus:ring-brain-rot-purple-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .btn-brand-secondary {
+    @apply bg-brain-rot-cyan-500 text-white font-semibold py-3 px-6 rounded-[--radius-brand]
+           transition-all duration-200 ease-in-out hover:bg-brain-rot-cyan-600 hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-brain-rot-cyan-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .btn-brand-outline {
+    @apply border-2 border-brain-rot-purple-500 text-brain-rot-purple-500 font-semibold py-3 px-6 
+           rounded-[--radius-brand] transition-all duration-200 ease-in-out 
+           hover:bg-brain-rot-purple-500 hover:text-white hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-brain-rot-purple-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* Brand card components */
+  .card-brand {
+    @apply bg-white border border-gray-200 rounded-[--radius-brand-lg] p-6 shadow-sm
+           transition-all duration-300 ease-out;
+  }
+
+  .card-brand-gradient {
+    @apply bg-brain-rot-mesh border border-brain-rot-purple-200 rounded-[--radius-brand-lg] p-6
+           transition-all duration-300 ease-out;
+  }
+
+  .card-brand-glow {
+    @apply bg-white border border-brain-rot-purple-200 rounded-[--radius-brand-lg] p-6 shadow-brand
+           transition-all duration-300 ease-out;
+  }
+
+  .card-brand-hover {
+    @apply hover:shadow-brand-lg hover:scale-[1.02] hover:-translate-y-1;
+  }
+}
+
+/* Dark mode theme updates */
+@layer base {
+  .dark {
+    --color-background: 240 10% 4%; /* #09090B */
+    --color-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-card: 240 10% 4%; /* #09090B */
+    --color-card-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-popover: 240 10% 4%; /* #09090B */
+    --color-popover-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-primary: 0 0% 100%; /* #FFFFFF */
+    --color-primary-foreground: 240 10% 4%; /* #09090B */
+    --color-secondary: 240 10% 10%; /* #19191C */
+    --color-secondary-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-muted: 240 10% 10%; /* #19191C */
+    --color-muted-foreground: 240 5% 65%; /* #A1A1A1 */
+    --color-accent: 240 10% 10%; /* #19191C */
+    --color-accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-destructive: 0 84.2% 60.2%; /* #EF4444 */
+    --color-destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --color-border: 0 0% 100% / 0.1; /* #FFFFFF1A */
+    --color-input: 240 10% 10%; /* #19191C */
+    --color-ring: 0 0% 100%; /* #FFFFFF */
+    --color-chart-1: 12 76% 61%; /* #E65C41 */
+    --color-chart-2: 173 58% 39%; /* #2A9D8F */
+    --color-chart-3: 197 37% 24%; /* #264653 */
+    --color-chart-4: 43 74% 66%; /* #E9C46A */
+    --color-chart-5: 27 87% 67%; /* #F4A261 */
+    --color-sand-50: 240 10% 10%; /* #19191C */
+    --color-sand-100: 240 10% 15%; /* #24242B */
+    --color-sand-600: 240 5% 65%; /* #A1A1A1 */
+    --color-sand-700: 240 5% 70%; /* #B3B3B3 */
+    --color-mint: 162 17% 20%; /* #2A3633 */
+    --color-mint-50: 108 12% 20%; /* #2F332E */
+
+    /* Adjust brand colors for dark mode backgrounds */
+    --color-ring: var(--color-brain-rot-purple-400); /* Lighter purple for dark mode focus */
+  }
+
+  /* Dark mode brand card adjustments */
+  .dark .card-brand {
+    @apply bg-gray-900 border-gray-800;
+  }
+
+  .dark .card-brand-gradient {
+    @apply border-brain-rot-purple-800;
+  }
+
+  .dark .card-brand-glow {
+    @apply bg-gray-900 border-brain-rot-purple-800;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+}

@@ -1,0 +1,108 @@
+/**
+ * Summer Brain Rot - Brand Colors
+ * 
+ * CSS Custom Properties for consistent brand application
+ * across both marketing site and participant portal
+ */
+
+:root {
+  /* Primary Brand Colors */
+  --brain-rot-purple: #8B5CF6;
+  --brain-rot-pink: #EC4899;
+  --brain-rot-cyan: #06B6D4;
+  
+  /* Secondary Colors */
+  --brain-rot-dark: #1F2937;
+  --brain-rot-light: #F8FAFC;
+  --brain-rot-accent: #10B981;
+  
+  /* Extended Palette */
+  --brain-rot-purple-light: #A78BFA;
+  --brain-rot-purple-dark: #7C3AED;
+  --brain-rot-pink-light: #F472B6;
+  --brain-rot-pink-dark: #DB2777;
+  --brain-rot-cyan-light: #22D3EE;
+  --brain-rot-cyan-dark: #0891B2;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--brain-rot-purple), var(--brain-rot-pink));
+  --gradient-electric: linear-gradient(135deg, var(--brain-rot-cyan), var(--brain-rot-purple));
+  --gradient-success: linear-gradient(135deg, var(--brain-rot-accent), var(--brain-rot-cyan));
+  --gradient-hero: linear-gradient(135deg, var(--brain-rot-purple-dark), var(--brain-rot-pink), var(--brain-rot-cyan));
+  
+  /* Functional Colors */
+  --color-text-primary: var(--brain-rot-dark);
+  --color-text-secondary: #6B7280;
+  --color-text-inverse: var(--brain-rot-light);
+  --color-background-primary: var(--brain-rot-light);
+  --color-background-secondary: #F3F4F6;
+  --color-border: #E5E7EB;
+  --color-border-accent: var(--brain-rot-purple);
+  
+  /* Interactive States */
+  --color-button-primary: var(--brain-rot-purple);
+  --color-button-primary-hover: var(--brain-rot-purple-dark);
+  --color-button-secondary: var(--brain-rot-cyan);
+  --color-button-secondary-hover: var(--brain-rot-cyan-dark);
+  --color-link: var(--brain-rot-purple);
+  --color-link-hover: var(--brain-rot-pink);
+  
+  /* Status Colors */
+  --color-success: var(--brain-rot-accent);
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: var(--brain-rot-cyan);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: var(--brain-rot-light);
+    --color-text-secondary: #9CA3AF;
+    --color-text-inverse: var(--brain-rot-dark);
+    --color-background-primary: #111827;
+    --color-background-secondary: #1F2937;
+    --color-border: #374151;
+  }
+}
+
+/* Brand Utility Classes */
+.bg-brand-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-brand-gradient-electric {
+  background: var(--gradient-electric);
+}
+
+.bg-brand-gradient-success {
+  background: var(--gradient-success);
+}
+
+.bg-brand-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.text-brand-purple {
+  color: var(--brain-rot-purple);
+}
+
+.text-brand-pink {
+  color: var(--brain-rot-pink);
+}
+
+.text-brand-cyan {
+  color: var(--brain-rot-cyan);
+}
+
+.border-brand-purple {
+  border-color: var(--brain-rot-purple);
+}
+
+.border-brand-pink {
+  border-color: var(--brain-rot-pink);
+}
+
+.border-brand-cyan {
+  border-color: var(--brain-rot-cyan);
+}

@@ -1,0 +1,73 @@
+<!--
+  Summer Brain Rot - Primary Logo
+  Usage: Main brand applications, hero sections
+  Background: Light or transparent backgrounds
+-->
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Primary brand gradient -->
+    <linearGradient id="brainRotGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="50%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+    
+    <!-- Icon gradient -->
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Brain Icon -->
+  <g transform="translate(10,15)">
+    <!-- Brain shape with circuit pattern -->
+    <path d="M20 5C25 5 30 8 32 15C35 12 40 12 42 18C44 16 48 18 48 25C48 30 45 35 40 35C38 38 35 40 30 40C25 40 20 38 18 35C15 35 12 32 12 28C10 30 5 28 5 22C5 18 8 15 12 15C12 10 15 5 20 5Z" 
+          fill="url(#iconGradient)" 
+          filter="url(#glow)"/>
+    
+    <!-- Circuit lines -->
+    <g stroke="url(#brainRotGradient)" stroke-width="1.5" fill="none" opacity="0.7">
+      <path d="M18 20 L22 20 L24 18 L28 18"/>
+      <path d="M16 25 L20 25 L22 27 L26 27"/>
+      <path d="M25 22 L29 22 L31 24 L35 24"/>
+      <path d="M20 30 L24 30 L26 32 L30 32"/>
+    </g>
+    
+    <!-- Digital dots -->
+    <g fill="url(#brainRotGradient)">
+      <circle cx="22" cy="18" r="1"/>
+      <circle cx="28" cy="20" r="1"/>
+      <circle cx="24" cy="25" r="1"/>
+      <circle cx="32" cy="28" r="1"/>
+      <circle cx="26" cy="32" r="1"/>
+    </g>
+  </g>
+  
+  <!-- Wordmark -->
+  <g transform="translate(70,20)">
+    <!-- "Summer" -->
+    <text x="0" y="20" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="18" fill="url(#brainRotGradient)">
+      Summer
+    </text>
+    
+    <!-- "Brain Rot" -->
+    <text x="0" y="45" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="url(#brainRotGradient)">
+      Brain Rot
+    </text>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="70" y="65" font-family="Inter, sans-serif" font-weight="400" font-size="10" fill="#6B7280">
+    Strategic Learning Laboratory
+  </text>
+</svg>

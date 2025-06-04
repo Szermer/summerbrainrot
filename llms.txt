@@ -1,0 +1,85 @@
+# Summer Brain Rot
+
+An entrepreneurial education platform teaching young people to build SaaS businesses through hands-on development of the platform itself.
+
+## Overview
+
+Summer Brain Rot is a unique educational program where participants learn full-stack development, business operations, and entrepreneurship by actively building and maintaining the platform they're learning on. The project consists of two main applications: a marketing site for program information and applications, and a participant portal for authenticated users.
+
+## Documentation
+
+- Repository: https://github.com/yourusername/summerbrainrot
+- Documentation: /docs/README.md
+- Architecture: /docs/architecture/technical-overview.md
+- Contributing: /docs/guides/contributing.md
+
+## Technology Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Database**: Firebase Firestore
+- **Authentication**: Firebase Auth
+- **Hosting**: Vercel (marketing) / Cloud (portal)
+- **Package Management**: npm workspaces (monorepo)
+
+## Project Structure
+
+```
+summerbrainrot/
+├── apps/
+│   ├── marketing/     # Public site (summerbrainrot.com)
+│   └── portal/        # Participant portal (summerbrainrot.camp)
+├── packages/
+│   ├── shared-components/
+│   ├── brand-assets/
+│   ├── types/
+│   └── config/
+├── docs/
+└── tools/
+```
+
+## Development Commands
+
+```bash
+# Install all dependencies
+npm run install:all
+
+# Run both applications
+npm run dev
+
+# Build everything
+npm run build
+
+# Run tests
+npm run test
+
+# Lint code
+npm run lint
+```
+
+## Key Concepts
+
+1. **Educational Integration**: Every feature serves as a learning opportunity
+2. **Multi-tenant Architecture**: Supports cohorts and team structures
+3. **Progressive Enhancement**: Features built incrementally by participants
+4. **Real-world Experience**: Production system with actual users
+5. **Mentorship Model**: Experienced developers guide participants
+
+## Current Status
+
+- Phase: MVP Setup
+- Progress: Configuring monorepo structure
+- Next Milestone: Authentication system
+- Target Launch: Summer 2025
+
+## Learning Objectives
+
+Participants learn:
+- Modern web development (React, Next.js, TypeScript)
+- Cloud architecture and deployment
+- Product management and user experience
+- Business metrics and analytics
+- Team collaboration and communication
+- Entrepreneurial mindset and problem-solving
