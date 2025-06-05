@@ -52,6 +52,10 @@ export const sidebarData: SidebarData = {
           icon: IconLayoutDashboard,
           items: [
             {
+              title: "Youth Dashboard",
+              url: "/youth-dashboard",
+            },
+            {
               title: "Dashboard 1",
               url: "/",
             },

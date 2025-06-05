@@ -89,6 +89,7 @@ This design system serves as a teaching tool:
 - [ADR-0005: AssemblyAI Design System](./0005-assemblyai-design-system.md) - Previous design iteration
 - [ADR-0006: Vercel Deployment](./0006-vercel-deployment.md) - Deployment considerations
 - [ADR-0007: React Version Fix](./0007-react-version-fix.md) - Enabled successful deployment
+- [ADR-0015: Youth Dashboard with Gamification](./0015-youth-dashboard-gamification.md) - Youth dashboard extends citrus theme
 
 ## References
 - [OKLCH Color Space](https://oklch.com/) - Color space documentation

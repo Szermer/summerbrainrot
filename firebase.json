@@ -41,8 +41,19 @@
       ]
     },
     {
-      "target": "portal",
-      "source": "apps/portal"
+      "site": "summerbrainrot-camp",
+      "source": "apps/portal",
+      "ignore": [
+        "**/node_modules/**",
+        "**/firebase-debug.log",
+        "**/.git/**",
+        "**/.next/**",
+        "**/dist/**",
+        "**/out/**",
+        "**/pnpm-lock.yaml",
+        "**/package-lock.json",
+        "**/yarn.lock"
+      ]
     }
   ],
   "firestore": {

@@ -110,7 +110,7 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 - **Base Template**: shadcn Admin Template v1.0.0
 - **Design System**: Subtle brand colors (purple primary, pink accent)
 - **Authentication**: Firebase Auth with email/password and social login
-- **Key Features**: Dashboard, progress tracking, collaboration tools, user management
+- **Key Features**: Youth dashboard with gamification, admin dashboards, progress tracking, collaboration tools
 - **Firebase Integration**: Auth, Firestore, Storage, Analytics, Web App Hosting
 - **Security**: HTTP-only cookies, route protection middleware, role-based access
 - **Environment Configuration**: Multi-environment support (development, production)
@@ -137,11 +137,11 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 │                                                                 │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
 │  │    Auth      │  │  Dashboard   │  │   Learning    │        │
-│  │  Component   │  │  Component   │  │   Modules     │        │
+│  │  Component   │  │  Components  │  │   Modules     │        │
 │  │              │  │              │  │               │        │
-│  │ - Login     │  │ - Stats      │  │ - Tutorials   │        │
-│  │ - Signup    │  │ - Charts     │  │ - Exercises   │        │
-│  │ - OAuth     │  │ - Activity   │  │ - Projects    │        │
+│  │ - Login     │  │ - Youth      │  │ - Tutorials   │        │
+│  │ - Signup    │  │ - Analytics  │  │ - Exercises   │        │
+│  │ - OAuth     │  │ - Admin      │  │ - Projects    │        │
 │  └──────────────┘  └──────────────┘  └──────────────┘        │
 │                                                                 │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
@@ -166,10 +166,47 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+### Youth Dashboard Components
+
+The Youth Dashboard provides a gamified interface for participants aged 12-17:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      Youth Dashboard                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
+│  │  Welcome     │  │   Progress   │  │    Daily      │        │
+│  │   Card       │  │    Card      │  │  Challenge    │        │
+│  │              │  │              │  │               │        │
+│  │ - XP/Level  │  │ - Skills     │  │ - Tasks       │        │
+│  │ - Stats     │  │ - Unlocks    │  │ - Rewards     │        │
+│  │ - Avatar    │  │ - Progress   │  │ - Timer       │        │
+│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
+│  │    Quick     │  │  Achievement │  │  Leaderboard  │        │
+│  │   Actions    │  │    Badges    │  │               │        │
+│  │              │  │              │  │               │        │
+│  │ - Buttons   │  │ - Earned     │  │ - Rankings    │        │
+│  │ - Icons     │  │ - Locked     │  │ - XP Points   │        │
+│  │ - Colors    │  │ - Progress   │  │ - Trends      │        │
+│  └──────────────┘  └──────────────┘  └──────────────┘        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+Key Features:
+- **Gamification**: XP system, levels, badges, and achievements
+- **Social Elements**: Team chat, leaderboard, activity feed
+- **Age-Appropriate Design**: Large buttons, bright colors, emojis
+- **Progress Visualization**: Skill trees, progress bars, unlocks
+- **Engagement**: Daily challenges, streaks, rewards
+
 ### Component Interactions
 - Components communicate through React Context and props
 - Service layer handles external API calls
-- Shared state managed through contexts (Auth, Theme, etc.)
+- Shared state managed through contexts (Auth, Theme, Gamification, etc.)
 
 ## Level 4: Code Structure
 

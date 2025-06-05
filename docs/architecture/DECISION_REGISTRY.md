@@ -20,6 +20,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0012](decisions/0012-template-customization-guidelines.md) | Template Customization Guidelines | Accepted | 2025-01-06 | Architecture |
 | [ADR-0013](decisions/0013-domain-mapping-completion.md) | Domain Mapping Completion | Accepted | 2025-01-06 | Deployment |
 | [ADR-0014](decisions/0014-portal-redirect-strategy.md) | Portal Redirect Strategy | Accepted | 2025-01-06 | Architecture |
+| [ADR-0015](decisions/0015-youth-dashboard-gamification.md) | Youth Dashboard with Gamification | Accepted | 2025-01-06 | UI/UX |
 
 ## Categories
 
@@ -42,6 +43,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - **ADR-0004**: Restore original template patterns with minimal brand customization
 - **ADR-0005**: Adopt AssemblyAI-inspired design system for modern, professional aesthetic (Superseded by ADR-0008)
 - **ADR-0008**: Migrate to vibrant citrus-themed design system using OKLCH color space
+- **ADR-0015**: Implement gamified youth dashboard with age-appropriate interface
 
 
 ### Deployment
@@ -72,6 +74,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0012 (Template Guidelines) supports ADR-0004 (Template Patterns) and ADR-0001 (Monorepo)
 - ADR-0013 (Domain Mapping) completes ADR-0003 (Firebase Platform) deployment configuration
 - ADR-0014 (Portal Redirect) provides interim solution while ADR-0013 (Domain Mapping) is pending for portal
+- ADR-0015 (Youth Dashboard) builds on ADR-0008 (Citrus Design) and ADR-0009 (Authentication) for youth experience
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design

@@ -166,8 +166,7 @@ interface UserProfile {
 - [ADR-0003: Firebase Platform](./0003-firebase-platform.md) - Platform choice enables authentication
 - [ADR-0001: Monorepo Structure](./0001-monorepo-structure.md) - Authentication fits within portal app
 - [ADR-0004: Template Pattern Restoration](./0004-template-pattern-restoration.md) - Auth UI follows template patterns
-
-## Related Decisions
+- [ADR-0010: Firebase Web App Hosting Deployment](./0010-firebase-web-app-hosting-deployment.md) - Production deployment configuration for authentication
 - [ADR-0011: Social Authentication Documentation](0011-social-authentication-documentation.md) - Configuration guides
 
 ## References
