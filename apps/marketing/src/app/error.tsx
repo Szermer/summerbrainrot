@@ -1,7 +1,7 @@
 'use client';
 
 export default function Error({
-  error,
+  error, // eslint-disable-line @typescript-eslint/no-unused-vars
   reset,
 }: {
   error: Error;

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { 
-  Trophy, 
   Clock, 
   Zap, 
   ArrowRight,
@@ -51,7 +50,7 @@ export function DailyChallenge() {
               Daily Challenge 🎯
             </CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
-              Complete today's challenge to earn bonus XP!
+              Complete today&apos;s challenge to earn bonus XP!
             </p>
           </div>
           <Badge className={getDifficultyColor(challenge.difficulty)}>

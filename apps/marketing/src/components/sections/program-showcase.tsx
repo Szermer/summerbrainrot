@@ -7,7 +7,6 @@ import Link from 'next/link';
 import {
   Brain,
   Code,
-  Users,
   TrendingUp,
   Zap,
   ArrowRight,
@@ -16,7 +15,6 @@ import {
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 // Success metrics that demonstrate program effectiveness
 const successMetrics = [
@@ -146,7 +144,7 @@ const ProgramShowcase = () => {
 
         {/* Success Metrics Grid */}
         <div className="mb-20 grid grid-cols-2 gap-6 lg:grid-cols-4">
-          {successMetrics.map((metric, index) => {
+          {successMetrics.map((metric) => {
             const Icon = metric.icon;
             return (
               <div
@@ -189,7 +187,7 @@ const ProgramShowcase = () => {
             <div className="bg-brain-rot-gradient absolute top-8 right-0 left-0 hidden h-0.5 opacity-30 lg:block"></div>
 
             <div className="grid gap-8 lg:grid-cols-3">
-              {learningModules.map((module, index) => (
+              {learningModules.map((module) => (
                 <div key={module.title} className="relative">
                   {/* Timeline dot */}
                   <div className="bg-brain-rot-gradient absolute -top-3 left-1/2 z-10 hidden h-6 w-6 -translate-x-1/2 transform rounded-full shadow-lg lg:block"></div>
@@ -252,7 +250,7 @@ const ProgramShowcase = () => {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
                 key={testimonial.author}
                 className="card-brand-glow group relative transition-all duration-300 hover:scale-105"

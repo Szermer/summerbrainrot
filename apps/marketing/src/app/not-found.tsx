@@ -12,10 +12,16 @@ export default function NotFound() {
         </p>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a href="/" className="bg-primary hover:bg-primary/90 text-primary-foreground flex items-center rounded-lg px-8 py-3 font-semibold transition-colors group min-w-[200px] gap-2">
+          <a
+            href="/"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground group flex min-w-[200px] items-center gap-2 rounded-lg px-8 py-3 font-semibold transition-colors"
+          >
             ← Back to Home
           </a>
-          <a href="/contact" className="border border-input bg-background hover:bg-accent hover:text-accent-foreground min-w-[200px] rounded-lg px-8 py-3 font-semibold transition-colors">
+          <a
+            href="/contact"
+            className="border-input bg-background hover:bg-accent hover:text-accent-foreground min-w-[200px] rounded-lg border px-8 py-3 font-semibold transition-colors"
+          >
             Contact Support
           </a>
         </div>

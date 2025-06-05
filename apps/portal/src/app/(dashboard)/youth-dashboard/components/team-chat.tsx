@@ -112,7 +112,7 @@ export function TeamChat() {
             className="flex-1"
             onKeyPress={(e) => {
               if (e.key === "Enter") {
-                console.log("Send message")
+                // Send message handler
               }
             }}
           />

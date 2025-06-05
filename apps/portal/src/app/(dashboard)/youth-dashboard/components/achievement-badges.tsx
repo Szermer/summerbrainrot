@@ -3,10 +3,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
-  Trophy, 
   Star, 
   Zap, 
-  Target, 
   Rocket, 
   Heart,
   Award,
@@ -17,7 +15,7 @@ interface Achievement {
   id: string
   name: string
   description: string
-  icon: any
+  icon: React.ElementType
   earned: boolean
   earnedDate?: string
   color: string

@@ -104,8 +104,8 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button 
-              aria-label="Apply Now" 
+            <Button
+              aria-label="Apply Now"
               asChild
               className="px-6 text-sm font-semibold transition-all"
             >

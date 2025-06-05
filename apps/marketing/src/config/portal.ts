@@ -2,7 +2,8 @@
 // Update PORTAL_URL when custom domain is configured
 
 // Current portal URL (Firebase Web App Hosting)
-export const PORTAL_URL = 'https://summerbrainrot--summerbrainrot.us-central1.hosted.app';
+export const PORTAL_URL =
+  'https://summerbrainrot--summerbrainrot.us-central1.hosted.app';
 
 // Future portal URL (when custom domain is configured)
 // export const PORTAL_URL = 'https://summerbrainrot.camp';

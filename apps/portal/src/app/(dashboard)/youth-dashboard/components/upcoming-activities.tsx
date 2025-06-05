@@ -11,7 +11,7 @@ interface Activity {
   time: string
   duration: string
   participants?: number
-  icon: any
+  icon: React.ElementType
 }
 
 export function UpcomingActivities() {

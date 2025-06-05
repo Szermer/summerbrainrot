@@ -1,14 +1,14 @@
 'use client';
 
 export default function GlobalError({
-  error,
+  error, // eslint-disable-line @typescript-eslint/no-unused-vars
   reset,
 }: {
   error: Error;
   reset: () => void;
 }) {
   return (
-    <html>
+    <html lang="en">
       <body>
         <div
           style={{

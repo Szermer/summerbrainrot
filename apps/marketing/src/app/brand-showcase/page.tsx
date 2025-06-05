@@ -1,16 +1,6 @@
 import React from 'react';
 
-import {
-  Brain,
-  Code,
-  Users,
-  TrendingUp,
-  Zap,
-  Star,
-  Palette,
-  Type,
-  Layout,
-} from 'lucide-react';
+import { Brain, Zap, Star, Palette, Type, Layout } from 'lucide-react';
 
 import Hero from '@/components/sections/hero';
 import ProgramShowcase from '@/components/sections/program-showcase';
