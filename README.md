@@ -92,12 +92,14 @@ summerbrainrot/
 - **Target Audience**: Parents, potential participants, program alumni
 
 ### Participant Portal (`apps/portal/`)
-- **Domain**: https://summerbrainrot.camp (LIVE)
+- **Domain**: https://summerbrainrot.camp (pending configuration)
+- **Current URL**: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
 - **Technology**: Next.js with SSR, Firebase Authentication
-- **Deployment**: Firebase Hosting with custom domain mapping
+- **Deployment**: Firebase Web App Hosting with automatic deployments
 - **Purpose**: Authenticated participant experience, progress tracking, collaboration
 - **Target Audience**: Current participants, mentors, program administrators
 - **Authentication**: Email/password + social login (Google, GitHub, Facebook)
+- **Access**: Marketing site redirects login/signup to portal
 
 ## 🛠 Technology Stack
 

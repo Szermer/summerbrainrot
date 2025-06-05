@@ -10,6 +10,15 @@ The public-facing marketing site for Summer Brain Rot, where young entrepreneurs
 
 This marketing site serves as the primary entry point for potential participants, parents, and program alumni. It features a vibrant citrus-themed design system with modern typography and energetic colors that capture the dynamic spirit of entrepreneurship.
 
+### Authentication Redirects
+
+The marketing site redirects authentication pages to the portal:
+- `/login` → Portal login page
+- `/signup` → Portal registration page  
+- `/apply` → Portal registration page
+
+Portal URL configuration is managed in `src/config/portal.ts` for easy updates when the custom domain is ready.
+
 ## Getting Started
 
 ```bash

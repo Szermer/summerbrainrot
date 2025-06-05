@@ -19,12 +19,14 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0011](decisions/0011-social-authentication-documentation.md) | Social Authentication Documentation | Accepted | 2025-01-06 | Documentation |
 | [ADR-0012](decisions/0012-template-customization-guidelines.md) | Template Customization Guidelines | Accepted | 2025-01-06 | Architecture |
 | [ADR-0013](decisions/0013-domain-mapping-completion.md) | Domain Mapping Completion | Accepted | 2025-01-06 | Deployment |
+| [ADR-0014](decisions/0014-portal-redirect-strategy.md) | Portal Redirect Strategy | Accepted | 2025-01-06 | Architecture |
 
 ## Categories
 
 ### Architecture
 - **ADR-0001**: Monorepo structure using npm workspaces for managing multiple applications
 - **ADR-0012**: Guidelines for customizing premium templates while maintaining quality
+- **ADR-0014**: Server-side redirect strategy for portal authentication flow
 
 ### Testing
 - **ADR-0002**: Dual-framework approach with Vitest for unit tests and Playwright for E2E tests
@@ -69,6 +71,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0011 (Social Auth Docs) documents configuration for ADR-0009 (Authentication)
 - ADR-0012 (Template Guidelines) supports ADR-0004 (Template Patterns) and ADR-0001 (Monorepo)
 - ADR-0013 (Domain Mapping) completes ADR-0003 (Firebase Platform) deployment configuration
+- ADR-0014 (Portal Redirect) provides interim solution while ADR-0013 (Domain Mapping) is pending for portal
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design

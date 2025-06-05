@@ -168,6 +168,7 @@ This configuration:
 - [ADR-0003: Firebase Platform](./0003-firebase-platform.md) - Platform choice enables Web App Hosting
 - [ADR-0009: Firebase Authentication System](./0009-firebase-authentication-system.md) - Authentication implementation that requires this deployment
 - [ADR-0001: Monorepo Structure](./0001-monorepo-structure.md) - Portal deployment within monorepo structure
+- [ADR-0014: Portal Redirect Strategy](./0014-portal-redirect-strategy.md) - Handles portal access until domain configured
 
 ## References
 - [Firebase Web App Hosting Documentation](https://firebase.google.com/docs/hosting/frameworks)

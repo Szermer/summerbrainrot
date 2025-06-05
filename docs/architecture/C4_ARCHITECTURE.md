@@ -100,6 +100,7 @@ Summer Brain Rot is an educational platform that teaches entrepreneurship throug
 - **Design System**: Citrus-themed with lime green (oklch(0.8719 0.1829 125.59)) primary, Alexandria typography
 - **Key Features**: SEO optimization, performance, MDX content, carousel hero
 - **Firebase Integration**: Analytics, performance monitoring
+- **Authentication**: Redirects to portal for login/signup/apply
 
 #### Portal App
 - **Technology**: Next.js 15 with SSR

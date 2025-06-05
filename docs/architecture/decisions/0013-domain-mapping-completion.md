@@ -101,6 +101,7 @@ This implementation teaches participants about:
 - [ADR-0003: Firebase Platform](0003-firebase-platform.md) - Firebase Hosting as deployment platform
 - [ADR-0010: Firebase Web App Hosting Deployment](0010-firebase-web-app-hosting-deployment.md) - Alternative portal deployment
 - [ADR-0006: Vercel Deployment](0006-vercel-deployment.md) - Superseded deployment approach
+- [ADR-0014: Portal Redirect Strategy](0014-portal-redirect-strategy.md) - Interim solution for portal access
 
 ## References
 
