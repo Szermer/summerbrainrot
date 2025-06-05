@@ -59,7 +59,7 @@ None currently - Sprint 1 completed!
   - [x] Created ADR-0003 for Firebase decision
   - [x] Updated documentation with deployment info
   - Status: 100% complete
-  - Deployed: https://summerbrainrot-com.web.app
+  - Deployed: https://summerbrainrot.com
 
 - [x] **[HIGH]** Citrus-Themed Design System
   - [x] Migrated from AssemblyAI blue to vibrant citrus theme
@@ -105,7 +105,7 @@ None currently - Sprint 1 completed!
   - [x] Successfully deployed and tested portal application
   - Status: 100% complete
   - Date: 2025-01-06
-  - Production URL: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
+  - Production URL: https://summerbrainrot.camp
 
 ### Ready to Start 📋
 - [x] **[HIGH]** Template Customization Documentation

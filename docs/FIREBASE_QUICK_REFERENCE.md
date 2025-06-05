@@ -29,11 +29,12 @@ https://summerbrainrot-staging.firebaseapp.com/__/auth/handler
 Add these domains in Authentication → Settings → Authorized domains:
 
 - `localhost` (development)
-- `summerbrainrot.camp` (production domain)
-- `summerbrainrot.com` (marketing site)
+- `summerbrainrot.camp` (production portal - LIVE)
+- `summerbrainrot.com` (marketing site - LIVE)
+- `summerbrainrot-camp.web.app` (Firebase hosting URL)
+- `summerbrainrot-com.web.app` (Firebase hosting URL)
 - `summerbrainrot--summerbrainrot.us-central1.hosted.app` (Firebase Web App Hosting)
 - `summerbrainrot.firebaseapp.com` (Firebase default)
-- `summerbrainrot.web.app` (Firebase hosting)
 
 ## GitHub OAuth App Settings
 

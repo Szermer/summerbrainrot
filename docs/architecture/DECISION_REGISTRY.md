@@ -18,6 +18,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0010](decisions/0010-firebase-web-app-hosting-deployment.md) | Firebase Web App Hosting Deployment | Accepted | 2025-01-06 | Deployment |
 | [ADR-0011](decisions/0011-social-authentication-documentation.md) | Social Authentication Documentation | Accepted | 2025-01-06 | Documentation |
 | [ADR-0012](decisions/0012-template-customization-guidelines.md) | Template Customization Guidelines | Accepted | 2025-01-06 | Architecture |
+| [ADR-0013](decisions/0013-domain-mapping-completion.md) | Domain Mapping Completion | Accepted | 2025-01-06 | Deployment |
 
 ## Categories
 
@@ -45,6 +46,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - **ADR-0003**: Firebase multi-site hosting with automated deployment pipelines
 - **ADR-0006**: Vercel deployment consideration (Superseded by ADR-0007)
 - **ADR-0010**: Firebase Web App Hosting for portal application with GitHub integration
+- **ADR-0013**: Custom domain mapping for production sites (summerbrainrot.com and .camp)
 
 ### Documentation
 - **ADR-0011**: Comprehensive guides for social authentication configuration
@@ -66,6 +68,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0010 (Web App Hosting) extends ADR-0003 (Firebase Platform) for portal deployment
 - ADR-0011 (Social Auth Docs) documents configuration for ADR-0009 (Authentication)
 - ADR-0012 (Template Guidelines) supports ADR-0004 (Template Patterns) and ADR-0001 (Monorepo)
+- ADR-0013 (Domain Mapping) completes ADR-0003 (Firebase Platform) deployment configuration
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design

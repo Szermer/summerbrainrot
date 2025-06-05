@@ -2,7 +2,7 @@
 
 The public-facing marketing site for Summer Brain Rot, where young entrepreneurs learn to build real SaaS businesses through hands-on development.
 
-- [Live Site](https://summerbrainrot-com.web.app/)
+- [Live Site](https://summerbrainrot.com/)
 - [Design System](#design-system)
 - Based on Streamline NextJS Template by https://www.shadcnblocks.com
 

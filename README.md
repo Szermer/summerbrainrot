@@ -86,16 +86,15 @@ summerbrainrot/
 ## 🎯 Application Architecture
 
 ### Marketing Site (`apps/marketing/`)
-- **Domain**: summerbrainrot.com
+- **Domain**: https://summerbrainrot.com (LIVE)
 - **Technology**: Next.js with static export
 - **Purpose**: Brand hub, program information, application process
 - **Target Audience**: Parents, potential participants, program alumni
 
 ### Participant Portal (`apps/portal/`)
-- **Domain**: summerbrainrot.camp  
-- **Production URL**: https://summerbrainrot--summerbrainrot.us-central1.hosted.app
+- **Domain**: https://summerbrainrot.camp (LIVE)
 - **Technology**: Next.js with SSR, Firebase Authentication
-- **Deployment**: Firebase Web App Hosting with automatic deployments
+- **Deployment**: Firebase Hosting with custom domain mapping
 - **Purpose**: Authenticated participant experience, progress tracking, collaboration
 - **Target Audience**: Current participants, mentors, program administrators
 - **Authentication**: Email/password + social login (Google, GitHub, Facebook)
