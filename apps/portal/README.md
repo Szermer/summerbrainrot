@@ -58,6 +58,18 @@ The portal uses Firebase Authentication with the following features:
 - **Session Management**: Secure HTTP-only cookies
 - **User Profiles**: Firestore-based user data storage
 
+### Social Authentication
+
+Social authentication is fully implemented in the codebase. To enable:
+
+1. Go to [Firebase Console](https://console.firebase.google.com) → Authentication → Sign-in method
+2. Enable desired providers (Google, GitHub, Facebook)
+3. Follow the setup guides:
+   - [Social Authentication Setup Guide](../../docs/SOCIAL_AUTH_SETUP.md)
+   - [Firebase Quick Reference](../../docs/FIREBASE_QUICK_REFERENCE.md)
+
+The login UI automatically shows enabled providers with appropriate buttons and handles the OAuth flow.
+
 ### Environment Configuration
 
 Required environment variables in `.env.local`:

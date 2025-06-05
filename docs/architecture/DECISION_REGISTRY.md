@@ -15,6 +15,8 @@ This registry provides a quick reference to all Architecture Decision Records (A
 | [ADR-0007](decisions/0007-react-version-fix.md) | React Version Downgrade to Fix Build Issues | Accepted | 2025-01-06 | Dependencies |
 | [ADR-0008](decisions/0008-citrus-design-system.md) | Citrus-Themed Design System | Accepted | 2025-01-06 | UI/Design |
 | [ADR-0009](decisions/0009-firebase-authentication-system.md) | Firebase Authentication System Implementation | Accepted | 2025-01-06 | Authentication |
+| [ADR-0010](decisions/0010-firebase-web-app-hosting-deployment.md) | Firebase Web App Hosting Deployment | Accepted | 2025-01-06 | Deployment |
+| [ADR-0011](decisions/0011-social-authentication-documentation.md) | Social Authentication Documentation | Accepted | 2025-01-06 | Documentation |
 
 ## Categories
 
@@ -29,6 +31,7 @@ This registry provides a quick reference to all Architecture Decision Records (A
 
 ### Authentication
 - **ADR-0009**: Comprehensive Firebase authentication system with social login and session management
+- **ADR-0011**: Documentation for configuring social authentication providers
 
 ### UI/Design
 - **ADR-0004**: Restore original template patterns with minimal brand customization
@@ -39,6 +42,10 @@ This registry provides a quick reference to all Architecture Decision Records (A
 ### Deployment
 - **ADR-0003**: Firebase multi-site hosting with automated deployment pipelines
 - **ADR-0006**: Vercel deployment consideration (Superseded by ADR-0007)
+- **ADR-0010**: Firebase Web App Hosting for portal application with GitHub integration
+
+### Documentation
+- **ADR-0011**: Comprehensive guides for social authentication configuration
 
 ### Dependencies
 - **ADR-0007**: React 18.3.1 version lock to resolve build compatibility issues
@@ -53,6 +60,8 @@ This registry provides a quick reference to all Architecture Decision Records (A
 - ADR-0007 (React Version) supersedes ADR-0006 (Vercel) by fixing the root cause
 - ADR-0008 (Citrus Design) supersedes ADR-0005 (AssemblyAI) with more vibrant branding
 - ADR-0009 (Authentication) builds on ADR-0003 (Firebase Platform) for authentication services
+- ADR-0010 (Web App Hosting) extends ADR-0003 (Firebase Platform) for portal deployment
+- ADR-0011 (Social Auth Docs) documents configuration for ADR-0009 (Authentication)
 
 ### Related Decisions
 - Testing infrastructure (ADR-0002) influences CI/CD pipeline design

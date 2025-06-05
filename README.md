@@ -98,7 +98,7 @@ summerbrainrot/
 - **Deployment**: Firebase Web App Hosting with automatic deployments
 - **Purpose**: Authenticated participant experience, progress tracking, collaboration
 - **Target Audience**: Current participants, mentors, program administrators
-- **Authentication**: Firebase Auth with email/password and social login
+- **Authentication**: Email/password + social login (Google, GitHub, Facebook)
 
 ## 🛠 Technology Stack
 
@@ -171,6 +171,24 @@ npm run deploy:functions   # Cloud Functions only
 # Local development with Firebase emulators
 npm run dev:firebase       # Start Firebase emulators
 ```
+
+## 🔐 Authentication & Security
+
+### Firebase Authentication
+The portal implements comprehensive authentication with:
+- Email/password registration and login
+- Social authentication (Google, GitHub, Facebook)
+- Secure session management with HTTP-only cookies
+- Role-based access control (participant, mentor, admin)
+- Protected routes and API endpoints
+
+### Social Authentication Setup
+To enable social login providers:
+1. Access Firebase Console → Authentication → Sign-in method
+2. Enable desired providers (Google, GitHub, Facebook)
+3. Follow the detailed guides:
+   - [Social Authentication Setup Guide](docs/SOCIAL_AUTH_SETUP.md)
+   - [Firebase Quick Reference](docs/FIREBASE_QUICK_REFERENCE.md)
 
 ## 📚 Educational Integration
 

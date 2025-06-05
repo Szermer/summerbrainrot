@@ -231,12 +231,14 @@ tests/
 
 ### Authentication & Authorization
 - **Firebase Authentication**: Multi-provider authentication (email/password, Google, GitHub, Facebook)
+- **Social Authentication**: OAuth 2.0 integration with Google, GitHub, and Facebook providers
 - **Session Management**: HTTP-only cookies with 5-day expiration and automatic renewal
 - **JWT Tokens**: Firebase ID tokens for secure client-server communication
 - **Role-Based Access Control**: Participant, mentor, and admin roles with granular permissions
 - **Route Protection**: Next.js middleware validates sessions for protected routes
 - **User Profiles**: Extended user data stored in Firestore with automatic profile creation
 - **Password Security**: Firebase-managed password policies and reset functionality
+- **OAuth Configuration**: Documented setup guides for social provider configuration (see ADR-0011)
 
 ### Data Protection
 - HTTPS everywhere

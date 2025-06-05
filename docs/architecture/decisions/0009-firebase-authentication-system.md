@@ -167,6 +167,9 @@ interface UserProfile {
 - [ADR-0001: Monorepo Structure](./0001-monorepo-structure.md) - Authentication fits within portal app
 - [ADR-0004: Template Pattern Restoration](./0004-template-pattern-restoration.md) - Auth UI follows template patterns
 
+## Related Decisions
+- [ADR-0011: Social Authentication Documentation](0011-social-authentication-documentation.md) - Configuration guides
+
 ## References
 - [Firebase Authentication Documentation](https://firebase.google.com/docs/auth)
 - [Next.js Authentication Patterns](https://nextjs.org/docs/authentication)

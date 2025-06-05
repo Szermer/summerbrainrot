@@ -83,6 +83,7 @@ We will use Firebase as our primary platform for hosting and backend services wi
 - [ADR-0001: Monorepo Structure](./0001-monorepo-structure.md) - Firebase configuration shared across apps
 - [ADR-0002: Testing Infrastructure](./0002-testing-infrastructure.md) - Firebase emulators for testing
 - [ADR-0009: Firebase Authentication System](./0009-firebase-authentication-system.md) - Builds on Firebase platform for authentication
+- [ADR-0011: Social Authentication Documentation](./0011-social-authentication-documentation.md) - Documents OAuth provider configuration
 
 ## References
 - [Firebase Documentation](https://firebase.google.com/docs)
