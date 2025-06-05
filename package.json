@@ -81,6 +81,7 @@
   "author": "Stephen Szermer",
   "license": "MIT",
   "dependencies": {
+    "playwright": "^1.52.0",
     "puppeteer": "^24.10.0"
   }
 }
