@@ -207,6 +207,19 @@ This project serves as a comprehensive learning laboratory where participants:
 4. **Start Contributing**: Begin with small modifications to shared components
 5. **Document Your Journey**: Use the platform tools to track and showcase your progress
 
+## 🎨 Template Customization
+
+The platform uses premium templates that should be customized thoughtfully:
+
+### Quick Guidelines
+- **DO**: Create wrapper components, add brand styles, extend configurations
+- **DON'T**: Modify `/components/ui/`, override base styles, break template structure
+
+### Resources
+- [Template Customization Guide](docs/TEMPLATE_CUSTOMIZATION_GUIDE.md) - Comprehensive patterns and examples
+- [Quick Reference](docs/TEMPLATE_CUSTOMIZATION_QUICK_REFERENCE.md) - At-a-glance dos and don'ts
+- [ADR-0012](docs/architecture/decisions/0012-template-customization-guidelines.md) - Architectural decision
+
 ## 🤝 Contributing
 
 This project welcomes contributions from participants, mentors, and collaborators:

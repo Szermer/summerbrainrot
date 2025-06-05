@@ -73,6 +73,10 @@ We will restore the original template patterns while applying minimal, strategic
 - [ADR-0003](./0003-firebase-platform.md) - Firebase integration remains independent of UI templates
 - [ADR-0005](./0005-assemblyai-design-system.md) - Builds upon restored template with modern design system
 
+## Related Decisions
+
+- [ADR-0012: Template Customization Guidelines](0012-template-customization-guidelines.md) - Provides detailed customization patterns
+
 ## References
 
 - [Streamline Next.js Template](https://github.com/streamline/nextjs-template)
